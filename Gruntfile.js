@@ -1,6 +1,7 @@
 /* global module:false */
 module.exports = function(grunt) {
 	var port = grunt.option('port') || 8000;
+	var keepalive = grunt.option('keepalive') || false;
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -80,6 +81,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: port,
+					keepalive: keepalive,
 					base: '.'
 				}
 			}
