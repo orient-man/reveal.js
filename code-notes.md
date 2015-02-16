@@ -17,7 +17,7 @@
 - bądźmy maksymalistami
 - ciegiełkami są funkcje
 - ważne są typy
-- automatyczna generalizacja
+- automatyczna generalizacja (pokazać kod w C#)
 - składamy funkcje w różne kombinacje: mamy różne operatory
 - proste sklejanie
 - "forward pipe" - fluent syntax
@@ -26,7 +26,8 @@
 
 # DEMO: Args.fs
 
-- unia dyskryminująca (enum++) ErrorCode
+- zwięzły kod
+- unia dyskryminująca (enum++): ErrorCode i ArgValue (minusy obiektowego podejścia)
 - monada ROP (Scott Wlaschin) zamiast wyjątków
  - "error propagator"
  - rozwinięcie tego co zrobił Uncle Bob (Exception -> ArgException(ErrorCode) -> Failure(ErrorCode))
