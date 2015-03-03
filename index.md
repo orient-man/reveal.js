@@ -155,7 +155,13 @@ Language support (hiding memento internals) e.g. friend classes, generics, closu
 
 ***
 
-Przykład użycia (stan iteratora):
+DEMO
+
+http://jsfiddle.net/5vt5uhfn/7/
+
+***
+
+Inne przykłady użycia (stan iteratora):
 
 ```cpp
 template <class Item>
@@ -179,6 +185,10 @@ public:
 
 ***
 
-DEMO
+## Bibliografia
 
-http://jsfiddle.net/5vt5uhfn/7/
+- http://martinfowler.com/bliki/DecoratedCommand.html
+- http://martinfowler.com/bliki/CommandOrientedInterface.html
+- http://martinfowler.com/eaaDev/EventNarrative.html
+- http://martinfowler.com/bliki/CommandQuerySeparation.html
+- http://martinfowler.com/bliki/CQRS.html
