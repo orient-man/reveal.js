@@ -1,4 +1,4 @@
-﻿## Jak nauczyliśmy się programować funkcyjnie nic o tym nie wiedząc
+﻿## Funkcyjne zabawki w obiektowej piaskownicy
 
 Marcin Malinowski
 
@@ -6,11 +6,11 @@ Marcin Malinowski
 - GitHub: https://github.com/orient-man
 - Blog: https://orientman.wordpress.com/
 
----
+Note:
 
-## Abstrakt
+Wiedza o tym, skąd autorzy języka C# czerpali inspiracje, jakie były ich intencje i jakie są ich długofalowe plany, nie jest powszechna. Tymczasem uważam, że bez niej nie można w pełni wykorzystać potencjału zawartego w tym języku.
 
-Elementy programowania funkcyjnego, na długo przed tym, zanim hipsterzy zaczęli zadawać się z monoidami i zapuszczać funktory, pojawiły się w języku C#. U licha! już ładnych kilka lat piszemy funkcyjnie, nic o tym nie wiedząc. Przyjrzymy się długoletniej pracy chochlików na usługach funkcyjnej policji myśli. Punktem startu będzie najczystszy możliwy kod obiektowy zrefaktorowany przez Wujka Boba, który… poprawimy, a może nawet przepiszemy.
+Silne przenikanie paradygmatu funkcyjnego do obiektowego, w pierwotnych założeniach języka, nie będzie zaskoczeniem, gdy uświadomimy sobie, że ci sami autorzy stworzyli również język F#. Ten młodszy i biedniejszy kuzyn poczyna sobie całkiem nieźle i stał się główną inspiracją dla najnowszego wcielenia swojego starszego krewnego. Niedawne otwarcie przez Microsoft platformy .NET i upublicznienie zapisów spotkań komitetu projektowego, daje nam niemożliwy wcześniej wgląd w proces powstawania przyszłych wersji tego języka. Jedno wiemy już na pewno: funkcyjnych zabawek będzie jeszcze więcej!
 
 ---
 
