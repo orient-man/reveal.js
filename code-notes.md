@@ -1,5 +1,6 @@
 # DEMO: Args
 
+- Args.cs: pozwijać wszystkie metody (Ctrl+M, Ctrl+O	 / Ctrl+M, Ctrl+L)
 - dobre OOP, unit testy, top-down, krótkie metody, dobre nazwy, SRP, łatwo rozszerzalny
 - Alt-Enter i do przodu!
 - lambdy i factory method (na górę kod, który będzie rozszerzany)
