@@ -77,7 +77,7 @@ Zalety:
 
 - mniej stanu, mniej drapania się po głowie
 - o działaniu programu można wnioskować z samych deklaracji typów danych i funkcji
-- krócej: LINQ, generics, lambdy, var...
+- krócej/czytelniej: LINQ, generics, lambdy, var...
 
 Wady:
 
@@ -140,7 +140,7 @@ Note:
 - Monadic null checking aka null propagator
 - Method &amp; property expressions
 
-Usunięte w ostatniej chwili z "preview":
+Usunięte w ostatniej chwili z Preview:
 
 - Primary constructors
 - Declaration expressions
@@ -357,7 +357,7 @@ case ExpressionStatement(
 
 ### Rekordy
 
-Rekord to klasa o semantyce *value type*. Zamiast pisać:
+Rekord to niezmienna klasa o semantyce *value type*. Zamiast pisać:
 ```csharp
 public class Point
 {
@@ -475,7 +475,7 @@ public readonly class Args
 { ...
 ```
 
-Rekurencyjnie wszystkie pola readonly:
+Rekurencyjnie wszystkie pola readonly (faktycznie niezmienna klasa):
 
 ```csharp
 public immutable class Args
@@ -484,12 +484,25 @@ public immutable class Args
 
 ---
 
+### Inne propozycje
 
-### Nullable and non-nullable reference types
+#### Nullable and non-nullable reference types
 
----
+```csharp
+string? n; // nullable string
+string! s; // non-nullable string
 
-### REPL (read-eval-print-loop)
+n = null; // Ok
+s = null; // Error!
+
+WriteLine(s.Length); // Ok
+WriteLine(n.Length); // Error!
+if (n is string! ns) WriteLine(ns.Length); // Ok
+```
+
+#### REPL (read-eval-print-loop) i skryptowanie
+
+Wyobraź sobie [scriptcs](http://scriptcs.net/) wbudowany w VS, zintegrowany z Debuggerem i zastępujący "immediate window"...
 
 ***
 
@@ -500,6 +513,8 @@ public immutable class Args
  - <!-- .element: class="fragment" --> C# czerpie pełnymi garściami z języków funkcyjnych
  - <!-- .element: class="fragment" --> ...mimo to zawsze pozostanie w kategorii "OOP first"
  - <!-- .element: class="fragment" --> ...jednak przyprawy funkcyjne mogą całkowicie zmienić smak potrawy
+
+<!-- .element: class="fragment" --> Żyjemy w ciekawych czasach :)
 
 Note:
 
@@ -514,11 +529,11 @@ Note:
 
 ## Bibliografia
 
-- Artykuł: [Why Functional Programming Matters](http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html)
 - Książka: [Real-World Functional Programming: With Examples in F# and C# - Petricek & Skeet](http://www.amazon.com/Real-World-Functional-Programming-With-Examples/dp/1933988924)
 - [Don Syme - .NET/C# Generics History](http://blogs.msdn.com/b/dsyme/archive/2011/03/15/net-c-generics-history-some-photos-from-feb-1999.aspx)
 - [C# 7 Desing Notes](https://github.com/dotnet/roslyn/labels/Design%20Notes)
-- Bez związku (?): [John Carmack - In-depth: Functional programming in C++](http://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php)
+- [Why Functional Programming Matters](http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html)
+- [John Carmack - In-depth: Functional programming in C++](http://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php)
 
 Materiały:
 
