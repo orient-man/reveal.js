@@ -537,7 +537,7 @@ Note:
 
 Materiały:
 
-- Slajdy: http://wrocnet74.orientman.com/
+- Slajdy: http://4developers.orientman.com/
 - Źródłowce: https://github.com/orient-man/CleanArgs
 
 ***
