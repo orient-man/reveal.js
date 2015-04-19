@@ -464,6 +464,7 @@ Console.WriteLine($"Sum: {t.sum}, count: {t.count}");
 ```
 
 Note: wygodne w połączeniu z LINQ
+
 ---
 
 ### Immutable types
