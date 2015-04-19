@@ -537,14 +537,14 @@ Note:
 
 Materiały:
 
-- Slajdy: http://grupalodz.orientman.com/
+- Slajdy: http://4Dev2015.orientman.com/
 - Źródłowce: https://github.com/orient-man/CleanArgs
 
 ***
 
 # Aaa... pytania?
 
-Ankieta: https://www.surveymonkey.com/s/KDVTQHQ Pls!
+Ankieta: https://www.surveymonkey.com/s/SKPS35K Pls!
 
 ![Ankieta QR Code](./images/ankieta-qrcode.png)
 
