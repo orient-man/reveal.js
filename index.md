@@ -75,13 +75,13 @@ Co możemy nabroić przy pomocy tych funkcyjnych zabawek?
 
 Zalety:
 
-- mniej stanu, mniej drapania się po głowie
+- mniej stanu, mniej drapania się po głowie (likwidacja "zmiennych zmiennych" i nielokalnych)
 - o działaniu programu można wnioskować z samych deklaracji typów danych i funkcji
 - krócej/czytelniej: LINQ, generics, lambdy, var...
 
 Wady:
 
-- więcej parametrów funkcji (długie deklaracje typów)
+- więcej parametrów funkcji (i długie deklaracje typów)
 - niewygodne zwracanie więcej niż 1 wartości z funkcji (``IEnumerator``)
 
 Note: Java '06 vs. C# '14 - bój był nierówny...
