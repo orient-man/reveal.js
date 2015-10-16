@@ -129,6 +129,7 @@ Note:
 - ``IReadOnlyList<>``, ``IReadOnlyDictionary<>``...
 - Microsoft.Bcl.Immutable
 
+Note: BCL warto korzystać, szczególnie w scenariuszach współbierznych, gdzie ważne jest unikanie locków...
 ---
 
 ## C# 6.0 (2015)
@@ -149,6 +150,7 @@ Usunięte w ostatniej chwili z Preview:
 Note:
  - skąd się to wzięło, kto nam tak język komplikuje?
  - inne: semicolon operator: var y = (var x = Foo(); Write(x); x * x))
+ - finalnie w C# 6: https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6
 
 ***
 
@@ -198,7 +200,23 @@ public class Point(int x, int y)
 }
 ```
 
-Note: konstruktory wyleciały prawd. z powodu planowanych rekordów
+Note: konstruktory wyleciały prawd. z powodu planowanych rekordów, ale można inicjować w zwykłym konstruktorze
+
+---
+
+### C# 6 final
+
+```charp
+public class Customer
+{
+    public string Name { get; } // backing field is readonly
+
+    public Customer(string first, string last)
+    {
+        Name = first + " " + last;
+    }
+}
+```
 
 ---
 
@@ -214,19 +232,21 @@ open Math
 Add 2 2
 ```
 
-C# 6 Preview:
+C# 6:
 ```csharp
 public static class Math
 {
     public static int Add(int x, int y) { return x + y; }
 }
 
-using Math;
-
+using static Math;
 Add(2, 2);
+
+using static System.Console;
+WriteLine("Hello World!");
 ```
 
-Note: czyli używajmy funkcji jak ludzie
+Note: czyli używajmy funkcji jak ludzie (w C# 7 funkcje na globalnym poziomie?)
 
 ---
 
@@ -260,7 +280,7 @@ with
   | ArgsException _ -> printfn "Other parsing error"
 ```
 
-C# 6 Preview:
+C# 6:
 ```csharp
 try
 {
@@ -279,9 +299,11 @@ F# dziś:
 let (>>=) x y = Option.bind y x // generalnie mało przydatne
 ```
 
-C# 6 Preview:
+C# 6:
 ```csharp
 var bestValue = points?.FirstOrDefault()?.X ?? -1;
+
+int? first = customers?[0].Orders?.Count();
 ```
 
 ---
@@ -289,10 +311,15 @@ var bestValue = points?.FirstOrDefault()?.X ?? -1;
 ### Method &amp; property expressions (lambdas as definitions)
 
 F# dziś: ha, ha - wolne żarty
+```fsharp
+member thix.Move x y = Point(X + dx, Y + dy)
+member this.Distance = Math.Sqrt((X * X) + (Y * Y))
+```
 
-C# 6 Preview:
+C# 6:
 ```csharp
 public Point Move(int dx, int dy) => new Point(X + dx, Y + dy);
+// property
 public double Distance => Math.Sqrt((X * X) + (Y * Y));
 ```
 
