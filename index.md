@@ -261,7 +261,10 @@ match TryParse("123") with true, x -> ... | _ -> ...
 
 C# 6 Preview:
 ```csharp
-if (int.TryParse("123", out int x)) ... else ...
+if (int.TryParse("123", out int x))
+    // x dostępne
+else
+    ...
 ```
 
 ---
