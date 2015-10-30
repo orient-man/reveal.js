@@ -571,14 +571,14 @@ Note:
 
 Materiały:
 
-- Slajdy: http://careercon2015.orientman.com/
+- Slajdy: http://dotnetconf2015.orientman.com/
 - Źródłowce: https://github.com/orient-man/CleanArgs
 
 ***
 
 # Aaa... pytania?
 
-Ankieta: https://www.surveymonkey.com/r/QCT96FT Pls!
+Ankieta: https://www.surveymonkey.com/r/MTJP2HR Pls!
 
 ![Ankieta QR Code](./images/ankieta-qrcode.png)
 
