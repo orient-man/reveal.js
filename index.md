@@ -8,9 +8,7 @@ Marcin Malinowski
 
 Note:
 
-Wiedza o tym, skąd autorzy języka C# czerpali inspiracje, jakie były ich intencje i jakie są ich długofalowe plany, nie jest powszechna. Tymczasem uważam, że bez niej nie można w pełni wykorzystać potencjału zawartego w tym języku.
-
-Silne przenikanie paradygmatu funkcyjnego do obiektowego, w pierwotnych założeniach języka, nie będzie zaskoczeniem, gdy uświadomimy sobie, że ci sami autorzy stworzyli również język F#. Ten młodszy i biedniejszy kuzyn poczyna sobie całkiem nieźle i stał się główną inspiracją dla najnowszego wcielenia swojego starszego krewnego. Niedawne otwarcie przez Microsoft platformy .NET i upublicznienie zapisów spotkań komitetu projektowego, daje nam niemożliwy wcześniej wgląd w proces powstawania przyszłych wersji tego języka. Jedno wiemy już na pewno: funkcyjnych zabawek będzie jeszcze więcej!
+Zacznę tam, gdzie kończy się "Czysty kod" Wujka Boba. Punktem startu będzie najczystszy możliwy kod obiektowy, którypoprawię, a może nawet wywrócę na nice. Jak daleko powinniśmy się posuwać przekształcając kod obiektowy na funkcyjny? Jakie kompromisy wynikają z (nad)użycia języka obiektowego do funkcyjnego programowania? Co kryje się za co raz silniejszym przenikaniem paradygmatu funkcyjnego do języka C# (bezwstydnie ściągającego od swojego młodszego brata - F#)? Jakie funkcyjne zabawki przyniosą nam przyszłe wersje języka C#?
 
 ---
 
