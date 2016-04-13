@@ -259,7 +259,7 @@ match TryParse("123") with true, x -> ... | _ -> ...
 
 C# 6 Preview ([Roslyn #206](https://github.com/dotnet/roslyn/issues/206)):
 ```csharp
-if (int.TryParse("123", out int x))
+if (int.TryParse("123", out var x))
     // x dostępne
 else
     ...
