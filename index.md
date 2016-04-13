@@ -182,7 +182,7 @@ type Point(x, y) =
     member this.Y = y
 ```
 
-C# 6 Preview:
+C# 6 Preview - [Roslyn #6997](https://github.com/dotnet/roslyn/issues/6997):
 ```csharp
 public class Point(int x, int y)
 {
@@ -257,7 +257,7 @@ let success, x = Int32.TryParse("123")
 match TryParse("123") with true, x -> ... | _ -> ...
 ```
 
-C# 6 Preview:
+C# 6 Preview ([Roslyn #206](https://github.com/dotnet/roslyn/issues/206)):
 ```csharp
 if (int.TryParse("123", out int x))
     // x dostępne
@@ -322,23 +322,6 @@ C# 6:
 public Point Move(int dx, int dy) => new Point(X + dx, Y + dy);
 // property
 public double Distance => Math.Sqrt((X * X) + (Y * Y));
-```
-
----
-
-### Constructor type parameter inference
-
-F# dziś:
-```fsharp
-let tuple = (5, "y")
-```
-
-C# 6 Preview:
-```csharp
-// zamiast new Tuple<int, string>(5, "y") / Tuple.Create(5, "y")
-var tuple = new Tuple(5, "y");
-// zamiast new KeyValuePair<string, Tuple<int, string>>(...)
-var pair = new KeyValuePair("x", tuple);
 ```
 
 ***
