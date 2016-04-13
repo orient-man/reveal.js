@@ -302,8 +302,7 @@ let (>>=) x y = Option.bind y x // generalnie mało przydatne
 
 C# 6:
 ```csharp
-var bestValue = points?.FirstOrDefault()?.X ?? -1;
-
+int bestValue = points?.FirstOrDefault()?.X ?? -1;
 int? first = customers?[0].Orders?.Count();
 ```
 
@@ -347,20 +346,19 @@ if (e != null) {
     var a = e.Expr as AssignmentExpressionSyntax;
     if (a != null) {
         var l = a.Left as IdentifierName;
-        var r = a.RIght as IdentifierName;
+        var r = a.Right as IdentifierName;
         if (l != null && r != null & l.Name.name == r.Name.name) ...
 ```
-
-C# 7:
+C# 7 (VS 15 Preview):
 ```csharp
 if (s is ExpressionStatement(
-        AssignmentExpressionSyntax(IdentifierName l, IdentifierName r)) 
+        AssignmentExpressionSyntax(IdentifierName l, IdentifierName r))
     && l.name = r.name) ...
 // lub
 switch (s) {
 case ExpressionStatement(
-        AssignmentExpressionSyntax(IdentifierName l, IdentifierName r)
-        where (l.name == r.name): ...
+        AssignmentExpressionSyntax(IdentifierName l, IdentifierName r))
+        when (l.name == r.name): ...
 }
 ```
 
