@@ -257,7 +257,7 @@ let success, x = Int32.TryParse("123")
 match TryParse("123") with true, x -> ... | _ -> ...
 ```
 
-C# 6 Preview ([Roslyn #206](https://github.com/dotnet/roslyn/issues/206)):
+C# 6 Preview ([Roslyn #6183](https://github.com/dotnet/roslyn/issues/6183)):
 ```csharp
 if (int.TryParse("123", out var x))
     // x dostępne
