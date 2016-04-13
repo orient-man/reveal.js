@@ -18,7 +18,7 @@ Zacznę tam, gdzie kończy się "Czysty kod" Wujka Boba. Punktem startu będzie 
 
 - Basic, Turbo Pascal/C, Assembler, Clipper, MS Access, Visual Basic, Java-XML :), C++, C#, JavaScript, F#...  i ze wszystkiego miałem frajdę, ale nie za wszystkim tęsknię.
 
-- Absolwent informatyki i matematyki na UW. Tech lead w firmie Piątka.
+- Absolwent informatyki i matematyki na UW. Ekspert IT w mBanku.
 
 ***
 
