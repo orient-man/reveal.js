@@ -571,7 +571,7 @@ Note:
 
 Materiały:
 
-- Slajdy: http://dotnetconf2015.orientman.com/
+- Slajdy: http://orient-man.github.io/getnet2016
 - Źródłowce: https://github.com/orient-man/CleanArgs
 
 ***
