@@ -544,6 +544,7 @@ Note:
 - Książka: [Real-World Functional Programming: With Examples in F# and C# - Petricek & Skeet](http://www.amazon.com/Real-World-Functional-Programming-With-Examples/dp/1933988924)
 - [Don Syme - .NET/C# Generics History](http://blogs.msdn.com/b/dsyme/archive/2011/03/15/net-c-generics-history-some-photos-from-feb-1999.aspx)
 - [C# 7 Desing Notes](https://github.com/dotnet/roslyn/labels/Design%20Notes)
+- Video: [The Future of C# @ Build 2016](https://channel9.msdn.com/Events/Build/2016/B889)
 - [Why Functional Programming Matters](http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html)
 - [John Carmack - In-depth: Functional programming in C++](http://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php)
 
