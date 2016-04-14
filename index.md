@@ -544,6 +544,7 @@ public static IReadOnlyDictionary<char, object> Parse(
 ```
 
 Lokalne funkcje są już w VS 15 Preview.
+
 ---
 
 ### Immutable types
