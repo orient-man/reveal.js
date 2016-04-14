@@ -27,9 +27,8 @@ Zacznę tam, gdzie kończy się "Czysty kod" Wujka Boba. Punktem startu będzie 
 Spojrzenie...
 
 1. ...do cudzego ogródka (Java)
-2. ...za siebie (C# 1-5)
-3. ...przed siebie (C# 6)
-4. ...przez ramię (C# 7+)
+2. ...za siebie (C# 1-6)
+3. ...przed siebie (C# 7+)
 6. ...z lotu ptaka
 
 ***
