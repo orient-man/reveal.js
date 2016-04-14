@@ -539,6 +539,28 @@ Note: wygodne w połączeniu z LINQ
 
 ---
 
+### Local functions
+
+Wracając na chwilę do programu Args:
+```csharp
+public static IReadOnlyDictionary<char, object> Parse(
+    IEnumerator<string> args,
+    IReadOnlyDictionary<char, Marshaler> schema)
+{
+    IEnumerable<(char arg, object value)> ParseImpl()
+    {
+        while (args.MoveNext())
+            foreach (var el in FindElements(args.Current))
+                yield return (el, ParseElement(el, args, schema));
+    }
+
+    return ParseImpl().ToDictionary(o => o.arg, o => o.value);
+}
+```
+
+Lokalne funkcje są już w VS 15 Preview.
+---
+
 ### Immutable types
 
 Wszystkie pola readonly:
