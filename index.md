@@ -104,6 +104,10 @@ Note:
 - Static classes
 - ...
 
+Note:
+- Anonymous delegates: zalążek lambd
+- Static classes: worki na funkcje
+
 ---
 
 <!-- .slide: data-background="./images/features3.png" style="padding: 20px; display: block; background: rgba(0, 0, 0, 0.4);" -->
@@ -117,6 +121,10 @@ Note:
 - Automatic properties
 - ...
 
+Note:
+
+LINQ i wszystkie dobrodziejstwa z tego wynikające, przydatne same w sobie, a bez których LINQ-a by nie było.
+
 ---
 
 <!-- .slide: data-background="./images/features4.png" style="padding: 20px; display: block; background: rgba(0, 0, 0, 0.4);" -->
@@ -126,7 +134,10 @@ Note:
 - ``IReadOnlyList<>``, ``IReadOnlyDictionary<>``...
 - Microsoft.Bcl.Immutable
 
-Note: BCL warto korzystać, szczególnie w scenariuszach współbierznych, gdzie ważne jest unikanie locków...
+Note:
+- możliwość wyrażenia (oznaczenia) intecji "niemodyfikowalności" przez użytkownika API
+- BCL warto korzystać, szczególnie w scenariuszach współbieżnych, gdzie ważne jest unikanie locków...
+
 ---
 
 ## C# 6.0 (2015)
@@ -145,9 +156,9 @@ Usunięte w ostatniej chwili z Preview:
 - Constructor type parameter inference
 
 Note:
- - skąd się to wzięło, kto nam tak język komplikuje?
- - inne: semicolon operator: var y = (var x = Foo(); Write(x); x * x))
- - finalnie w C# 6: https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6
+- skąd się to wzięło, kto nam tak język komplikuje?
+- inne: semicolon operator: var y = (var x = Foo(); Write(x); x * x))
+- finalnie w C# 6: https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6
 
 ***
 
@@ -155,12 +166,19 @@ Note:
 
 ![https://twitter.com/dsyme/status/409476721780334592](./images/donsyme.png)
 
+Note:
+- Skąd zło? Dlaczego nam ten język tak komplikują, że powoli zaczyna przypominać C++?
+- Skąd autorzy czerpią inspiracje?
+
 ---
 
 > Don Syme is the designer and architect of the F# programming language [...] Earlier, created generics in the .NET Common Language Runtime, including the initial design of generics for the C# programming language [...]
 
 http://en.wikipedia.org/wiki/Don_Syme
 
+Note:
+- Można oowiedzieć "Australijski łącznik" przemycający idee z F# do C#
+- To co zrobiłem w kodem obiektowym jest jak najbardziej w zgodzie z ewolucją C#
 
 ***
 
@@ -169,6 +187,11 @@ http://en.wikipedia.org/wiki/Don_Syme
 # C# 6
 
 # Functional way is the right way
+
+Note:
+- Podejście funkcyjne to jedyne słuszne podejście!
+- C# 6 miał być większą rewolucją niż się okazał...
+- ...ale to co wyleciało z Preview zapowiada kierunek dalszych zmian
 
 ---
 
@@ -243,15 +266,19 @@ using static System.Console;
 WriteLine("Hello World!");
 ```
 
-Note: czyli używajmy funkcji jak ludzie (w C# 7 funkcje na globalnym poziomie?)
+Note:
+- mała rzecz a cieszy
+- czyli używajmy funkcji jak ludzie (funkcje na globalnym poziomie)
 
 ---
 
-###  Declaration expressions
+###  Declaration expressions (out var)
 
 F# dziś:
 ```fsharp
 let success, x = Int32.TryParse("123")
+// lub
+if (true, x) = Int32.TryParse("123") then ... else ...
 // lub
 match TryParse("123") with true, x -> ... | _ -> ...
 ```
@@ -290,6 +317,10 @@ catch (ArgsException e)
     when (e.ErrorCode == ErrorCode.UnexpectedArgument) {...}
 ```
 
+Note:
+- Zostało jako namiastka pattern matchingu
+- Też by się przydało w programie Args...
+
 ---
 
 ### Monadic null checking aka null propagator
@@ -305,6 +336,7 @@ int bestValue = points?.FirstOrDefault()?.X ?? -1;
 int? first = customers?[0].Orders?.Count();
 ```
 
+Note: magiczna nazwa, ale przydane w C# (w F# mniej - o null-a trzeba się postarać)
 ---
 
 ### Method &amp; property expressions (lambdas as definitions)
@@ -334,6 +366,9 @@ C# 7 Design Meeting Notes:
 
 https://github.com/dotnet/roslyn/issues/98
 
+Note:
+- Roslyn jest OpenSource i możemy śledzić proces powstawania nowej wersji
+- Można sobie pobrać źródła kompilatora (z różnych branchy...)
 ---
 
 ### Pattern matching
@@ -360,6 +395,8 @@ case ExpressionStatement(
         when (l.name == r.name): ...
 }
 ```
+
+Note: pattern matching działa w VS, ale może nie do końca (składnia?)
 
 ---
 
@@ -399,6 +436,10 @@ Note: prawdopodobnie przez to wstrzymali się z głównymi konstruktorami
 - zwracania wielu wartości z metody
 - anonimowe typy o większym zasięgu
 - symulacja algebraicznych typów danych bla, bla...
+
+Note:
+- recepta na zdiagnozowany psychologicznie przypadek lęku programistów przed tworzeniem nowych klas
+- zwracanie wielu wartości w Args (zamiast Enumerator)
 
 ---
 
@@ -460,7 +501,7 @@ public void Tally(IEnumerable<int> values, out int sum, out int count) {...}
 public Tuple<int, int> Tally(IEnumerable<int> values) {...}
 ```
 
-C# 7:
+C# 7 (pokazane na Build 2016):
 ```csharp
 public (int sum, int count) Tally(IEnumerable<int> values) {
     return values.Aggregate(
@@ -513,7 +554,7 @@ if (n is string! ns) WriteLine(ns.Length); // Ok
 
 Wyobraź sobie [scriptcs](http://scriptcs.net/) wbudowany w VS, zintegrowany z Debuggerem i zastępujący "immediate window"...
 
-Note: lepszy REPL będzie już w VS 2015 update 1
+Note: lepszy REPL jest już w VS 2015 update 1
 
 ***
 
