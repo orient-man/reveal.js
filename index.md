@@ -177,7 +177,7 @@ Note:
 http://en.wikipedia.org/wiki/Don_Syme
 
 Note:
-- Można oowiedzieć "Australijski łącznik" przemycający idee z F# do C#
+- Można powiedzieć "Australijski łącznik" przemycający idee z F# do C#
 - To co zrobiłem w kodem obiektowym jest jak najbardziej w zgodzie z ewolucją C#
 
 ***
@@ -359,7 +359,8 @@ int bestValue = points?.FirstOrDefault()?.X ?? -1;
 int? first = customers?[0].Orders?.Count();
 ```
 
-Note: magiczna nazwa, ale przydane w C# (w F# mniej - o null-a trzeba się postarać)
+Note: Magiczna nazwa, ale przydane w C# (w F# mniej - o null-a trzeba się postarać)
+
 ---
 
 ### Method &amp; property expressions (lambdas as definitions)
@@ -392,6 +393,7 @@ https://github.com/dotnet/roslyn/issues/98
 Note:
 - Roslyn jest OpenSource i możemy śledzić proces powstawania nowej wersji
 - Można sobie pobrać źródła kompilatora (z różnych branchy...)
+
 ---
 
 ### Pattern matching
