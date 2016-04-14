@@ -627,7 +627,7 @@ Materiały:
 
 # Aaa... pytania?
 
-Ankieta: https://www.surveymonkey.com/r/MTJP2HR Pls!
+Ankieta: https://www.surveymonkey.com/r/XG3GCHQ Pls!
 
 ![Ankieta QR Code](./images/ankieta-qrcode.png)
 
