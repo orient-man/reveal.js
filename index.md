@@ -195,7 +195,7 @@ Note:
 
 ---
 
-### Primary constructors / Readonly auto properties
+### Readonly auto properties
 
 F# dziś:
 ```fsharp
@@ -204,39 +204,22 @@ type Point(x, y) =
     member this.Y = y
 ```
 
-C# 6 Preview - [Roslyn #6997](https://github.com/dotnet/roslyn/issues/6997):
+C# 6
 ```csharp
-public class Point(int x, int y)
+public class Point
 {
-    private int x, y;
-}
-```
+    public int X { get; }
+    public int Y { get; }
 
-```csharp
-public class Point(int x, int y)
-{
-    public int X { get; } = x;
-    public int Y { get; } = y;
+    public void Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
 }
 ```
 
 Note: konstruktory wyleciały prawd. z powodu planowanych rekordów, ale można inicjować w zwykłym konstruktorze
-
----
-
-### C# 6 final
-
-```charp
-public class Customer
-{
-    public string Name { get; } // backing field is readonly
-
-    public Customer(string first, string last)
-    {
-        Name = first + " " + last;
-    }
-}
-```
 
 ---
 
