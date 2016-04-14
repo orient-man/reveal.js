@@ -255,50 +255,6 @@ Note:
 
 ---
 
-###  Declaration expressions (out var)
-
-F# dziś:
-```fsharp
-let success, x = Int32.TryParse("123")
-// lub
-if (true, x) = Int32.TryParse("123") then ... else ...
-// lub
-match TryParse("123") with true, x -> ... | _ -> ...
-```
-
-C# 6 Preview ([Roslyn #6183](https://github.com/dotnet/roslyn/issues/6183)):
-```csharp
-if (int.TryParse("123", out var x))
-    // x dostępne
-else
-    ...
-```
-
-Note: wyleciało, ale wraca w C# 7
-
----
-
-Która wersja lepsza?
-
-```csharp
-public T Get<T>(char arg)
-{
-    object value;
-    if (!values.TryGetValue(arg, out value))
-        return default(T);
-
-    return value is T ? (T)value : default(T);
-}
-
-public T Get<T>(char arg)
-{
-    // out var + pattern matching
-    return values.TryGetValue(arg, out T value) ? value : default(T);
-}
-```
-
----
-
 ### Exception filters
 
 F# dziś:
@@ -405,6 +361,50 @@ case ExpressionStatement(
 ```
 
 Note: pattern matching działa w VS, ale może nie do końca (składnia?)
+
+---
+
+###  Declaration expressions (out var)
+
+F# dziś:
+```fsharp
+let success, x = Int32.TryParse("123")
+// lub
+if (true, x) = Int32.TryParse("123") then ... else ...
+// lub
+match TryParse("123") with true, x -> ... | _ -> ...
+```
+
+C# 7 - [Roslyn #6183](https://github.com/dotnet/roslyn/issues/6183):
+```csharp
+if (int.TryParse("123", out var x))
+    // x dostępne
+else
+    ...
+```
+
+Note: wyleciało, ale wraca w C# 7
+
+---
+
+Która wersja lepsza?
+
+```csharp
+public T GetValue<T>(char arg)
+{
+    object value;
+    if (!values.TryGetValue(arg, out value))
+        return default(T);
+
+    return value is T ? (T)value : default(T);
+}
+
+public T GetValue<T>(char arg)
+{
+    // out var + pattern matching
+    return values.TryGetValue(arg, out T value) ? value : default(T);
+}
+```
 
 ---
 
