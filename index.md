@@ -8,7 +8,7 @@ Marcin Malinowski
 
 Note:
 
-Zacznę tam, gdzie kończy się "Czysty kod" Wujka Boba. Punktem startu będzie najczystszy możliwy kod obiektowy, którypoprawię, a może nawet wywrócę na nice. Jak daleko powinniśmy się posuwać przekształcając kod obiektowy na funkcyjny? Jakie kompromisy wynikają z (nad)użycia języka obiektowego do funkcyjnego programowania? Co kryje się za co raz silniejszym przenikaniem paradygmatu funkcyjnego do języka C# (bezwstydnie ściągającego od swojego młodszego brata - F#)? Jakie funkcyjne zabawki przyniosą nam przyszłe wersje języka C#?
+Zacznę tam, gdzie kończy się "Czysty kod" Wujka Boba. Punktem startu będzie najczystszy możliwy kod obiektowy, który poprawię, a może nawet wywrócę na nice. Jak daleko powinniśmy się posuwać przekształcając kod obiektowy na funkcyjny? Jakie kompromisy wynikają z (nad)użycia języka obiektowego do funkcyjnego programowania? Co kryje się za co raz silniejszym przenikaniem paradygmatu funkcyjnego do języka C# (bezwstydnie ściągającego od swojego młodszego brata - F#)? Jakie funkcyjne zabawki przyniosą nam przyszłe wersje języka C#?
 
 ---
 
@@ -399,11 +399,9 @@ public T GetValue<T>(char arg)
     return value is T ? (T)value : default(T);
 }
 
-public T GetValue<T>(char arg)
-{
-    // out var + pattern matching
-    return values.TryGetValue(arg, out T value) ? value : default(T);
-}
+// out var + pattern matching
+public T GetValue<T>(char arg) =>
+    values.TryGetValue(arg, out T value) ? value : default(T);
 ```
 
 ---
