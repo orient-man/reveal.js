@@ -191,6 +191,7 @@ https://www.jasondavies.com/wordcloud/
 - Video: [Scott Wlaschin - Coding Like Frankenstein](https://vimeo.com/142347199) - i pozamiatane!
 - Video: [Greg Meredith - Monadic Design Patterns for the Web - Introduction to Monads](http://channel9.msdn.com/Series/C9-Lectures-Greg-Meredith-Monadic-Design-Patterns-for-the-Web/C9-Lectures-Greg-Meredith-Monadic-Design-Patterns-for-the-Web-Introduction-to-Monads) - abstrakcyjnie, ale zjadliwie
 - Blog: [Fabulous adventures in coding: Monads, parts 1-13](http://ericlippert.com/category/monads/) - wyczerpująco
+- Ciekawostka: [Monad/PowerShell Manifesto](http://www.jsnover.com/Docs/MonadManifesto.pdf)
 
 ***
 
