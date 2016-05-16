@@ -209,11 +209,11 @@ Note: mądrość na koniec
 
 ## Aaa... pytania?
 
-Ankieta: https://www.surveymonkey.com/r/G2FW295 Pls!
+Ankieta: https://www.surveymonkey.com/r/WKK3XT7 Pls!
 
 ![Ankieta QR Code](./images/ankieta-qrcode.png)
 
-- Slajdy: http://orient-man.github.io/kgdnet97/
+- Slajdy: http://orient-man.github.io/WiT-2016/
 - Źródłowce: https://github.com/orient-man/MonadClub
 
 Note:
