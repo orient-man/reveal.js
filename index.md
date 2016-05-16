@@ -155,6 +155,12 @@ Note: także generatory
 
 ***
 
+### Monady są wszędzie
+
+![Monad Manifesto](./images/monad-manifesto.jpeg)
+
+---
+
 <!-- .slide: data-background="./images/wordle.png" style="top: -50px !important;" -->
 
 ### Morał: Najpierw konkret potem abstrakcja
