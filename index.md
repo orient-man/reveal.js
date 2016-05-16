@@ -132,6 +132,8 @@ Na szczęście, aby używać LINQ-a nie musimy znać w każdym szczególe implem
 - ``Task<T>``
 - ``IEnumerable<T>``
 
+Note: także generatory
+
 ---
 
 ### Podsumownie Monad w C# ###
