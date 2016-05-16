@@ -28,21 +28,19 @@ Zatem zamiast tłumaczyć, będziemy obserwować je w naturze (językach C# i F#
 
 ***
 
-## Spis rzeczy
+## Wstęp
 
-1. Dlaczego nie?
-2. Kod, kod, kod
-3. Dlaczego tak?
+![Wisdom](./images/wisdom.jpg)
 
 ***
 
-## Dlaczego nie?
+## Co z tymi monadami?
 
 ![Miming](./images/miming.jpg)
 
 ***
 
-### Bo straszno?
+### Straszno...
 
 <!-- .slide: data-background="./images/skull.png" -->
 
@@ -55,7 +53,7 @@ Note:
 
 ***
 
-### I śmieszno?
+### ...i śmieszno
 
 ![Energy](./images/ego_monad.gif)
 
