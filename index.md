@@ -187,6 +187,12 @@ Composable computation descriptions:1
 
 https://www.jasondavies.com/wordcloud/
 
+---
+
+![Wisdom](./images/monad-4dev.jpeg)
+
+Note: mądrość na koniec
+
 ***
 
 ## Bibliografia
