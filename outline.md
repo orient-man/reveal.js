@@ -1,4 +1,4 @@
-﻿# Rok niebezpiecznego życia, czyli F# na produkcji - Outline
+﻿# Rok niebezpiecznego życia, czyli F\# na produkcji - Outline
 
 ## Moja historia ("story arc")
 
