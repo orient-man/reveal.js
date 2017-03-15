@@ -28,8 +28,8 @@ I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na nowy system 
 
 * Jak nie wejść po raz drugi do tej samej rzeki i nie popełnić błędów poprzedników? (monolit + kod spaghetti)
 * Od kilku lat zajmowałem się programowaniem funkcyjnym: i w pracy, i jako prelegent. Niemniej, używałem do tego celu jedynie języka C# i nie mogłem pochwalić się nawet linijką kodu produkcyjnego napisanego w F#. Jak przekonać innych do nowego języka, który nie był do tej pory używany w banku?
-* Będąc jedyna osobą w zespole znającą F# - i to w stopniu początkującym - musiałem nauczyć go innych. Jak to zrobić szybko?
-* Co trzeba zrobić, aby F# stał się w ogóle dostępną opcją z punktu widzenia naszych procesów Continous Delivery (kompilacja, paczkowanie, instalacja)?
+* Będąc jedyną osobą w zespole znającą F# - i to w stopniu początkującym - musiałem nauczyć go innych. Jak to zrobić szybko?
+* Co trzeba zrobić, aby F# stał się w ogóle dostępną opcją z punktu widzenia naszych procesów Continous Delivery (kompilacja, paczkowanie, instalacja, badanie jakości kodu)?
 
 ### Dostępne rozwiązania (plan)
 
