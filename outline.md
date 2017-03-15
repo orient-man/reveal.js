@@ -1,4 +1,4 @@
-﻿# Rok niebezpiecznego życia, czyli F# na produkcji - Outline #
+﻿# Rok niebezpiecznego życia, czyli F&#35; na produkcji - Outline
 
 ## Moja historia ("story arc")
 
@@ -9,9 +9,9 @@ sprowadzać do 3 aktywności:
 
 1. Usprawnianiu i łataniu dziur w wielkich gmachach aplikacji postawionych przez rzesze bezimiennych autorów (dosłownie, bo ktoś uciął historią przy migracji z SVN!).
 1. Uczestniczeniu w nasiadówkach, na których jako "Pan Ekspert IT" miałem ex catedra planować świetlaną przyszłość. W rzeczywistości dyskutować nad kwestiami w rodzaju (bez sensu!):
-  * czy zatrudniać programistów tylko do pisania testów automatycznych?
-  * jedno repozytorium czy wiele?
-  * kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?
+   * czy zatrudniać programistów tylko do pisania testów automatycznych?
+   * jedno repozytorium czy wiele?
+   * kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?
 1. Gaszeniu pożarów na produkcji - co bywa ciekawe, ale jednak lepiej zapobiegać...
 
 Słowem: sytuacja nie była różowa. A przecież mogło być tak fajnie:
