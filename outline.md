@@ -5,8 +5,8 @@
 
 ### Kontekst
 
-Po pierwszych miodowym miesiącu w nowej pracy nadszedł kryzys. Przyszłość wydawała się
-sprowadzać do 3 aktywności:
+Po pierwszym miodowym miesiącu w nowej pracy nadszedł _kryzys_. Przyszłość wydawała się
+sprowadzać do 3 rodzajów aktywności:
 
 1. Usprawnianiu i łataniu dziur w wielkich gmachach aplikacji postawionych przez rzesze bezimiennych autorów (dosłownie, bo ktoś uciął historią przy migracji z SVN!).
 1. Uczestniczeniu w nasiadówkach, na których jako "Pan Ekspert IT" miałem ex catedra planować świetlaną przyszłość. W rzeczywistości dyskutować nad kwestiami w rodzaju (bez sensu!):
@@ -20,20 +20,20 @@ Słowem: sytuacja nie była różowa. A przecież mogło być tak fajnie:
 * ciekawa domena (rynek walutowy, Hedge Accounting czyli rachunkowość zabezpieczeń)
 * i naprawdę niegłupi ludzie zarówno w IT, jaki i w biznesie
 
-Chciałem "zrobić różnicę" - tylko jak?
+Chciałem _zrobić różnicę_ - tylko jak?
 
 I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na nowy system z nietrywialną logiką (zero CRUD-a!).
 
 ### Wyzwania
 
-* Jak nie wejść jeszcze raz do tej samej rzeki i nie popełnić błędów poprzedników? (monolit + kod spaghetti)
-* Od kilku lat zajmowałem się programowaniem funkcyjnym: i w pracy, i jako prelegent. Niemniej używałem do tego celu jedynie języka C# i nie mogłem się pochwalić nawet linijką kodu napisanego w F#. Jak przekonać innych do nowego języka, który nie był do tej pory używany w banku?
+* Jak nie wejść po raz drugi do tej samej rzeki i nie popełnić błędów poprzedników? (monolit + kod spaghetti)
+* Od kilku lat zajmowałem się programowaniem funkcyjnym: i w pracy, i jako prelegent. Niemniej, używałem do tego celu jedynie języka C# i nie mogłem pochwalić się nawet linijką kodu produkcyjnego napisanego w F#. Jak przekonać innych do nowego języka, który nie był do tej pory używany w banku?
 * Będąc jedyna osobą w zespole znającą F# - i to w stopniu początkującym - musiałem nauczyć go innych. Jak to zrobić szybko?
-* Co trzeba zrobić, aby F# był dostępną opcją z punktu widzenia naszych procesów Continous Delivery (kompilacja, paczkowanie, instalacja)?
+* Co trzeba zrobić, aby F# stał się w ogóle dostępną opcją z punktu widzenia naszych procesów Continous Delivery (kompilacja, paczkowanie, instalacja)?
 
 ### Dostępne rozwiązania (plan)
 
-Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy się opłaci, budżet, dostępność zespołu) i faktyczny start prac nastąpić za 2 miesiące.
+Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy się opłaci, wykonalności, budżet, dostępność zespołu) i faktyczny start prac miał nastąpić za co najmniej 2 miesiące.
 
 Wstępne założenia - nie związane z F# - "oczywiste oczywistości", ale w świecie korpo rewolucyjne:
 
@@ -41,11 +41,11 @@ Wstępne założenia - nie związane z F# - "oczywiste oczywistości", ale w św
 1. Również nie powiekszamy długu technologicznego rozszerzając istniejący GUI (WinForms), ale tworzymy nowy (Web/SPA)
 1. Minimalizujemy użycie wewnętrznych frameworków
 1. Stosujemy Test Driven Developement i piramidę testów
-1. Stosujemy podejście iteracyjne i wchodzimy na produkcję MVC niezależnie od bankowych "big-bangowych" release-ów
+1. Stosujemy podejście iteracyjne i wchodzimy na produkcję z Minimum Viable Product niezależnie od bankowych "big-bangowych" release-ów
 
-Był czas na przemyślenie rozwiązania i prototypy "Proof-of-Concept". Decyzja o użyciu F# została odłożona.
+Teraz był czas na przemyślenie rozwiązania i prototypy "Proof-of-Concept". Decyzja o użyciu F# została odłożona.
 
-O tym co było dalej, jest ta prezentacja.
+O tym co było dalej jest ta prezentacja.
 
 TODO...
 
