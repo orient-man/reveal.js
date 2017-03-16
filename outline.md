@@ -126,10 +126,21 @@ Na koniec anegdota:
 
 ## Proces ("learning process")
 
+TODO: Czegośmy się nauczyli w trakcie projektu...
+
 ## Podsumowanie
 
-Historyjka: nagroda na odejście
+I żyli długo i szczęśliwie... Niestety finał jest słodko-gorzki - jak to w życiu:
+ * System jest na produkcji ku ogólnemu zadowoleniu - Yupi!
+ * Dostałem za niego roczną nagrodę $$$
+ * Ale... nasz biznes przegrał coroczną "bitwę o mendeje", budżet się skurczył i na razie nie ma dalszego ciągu...
+ * Kolega został wypożyczony do zespołu rzeźbiącego w Angularze 2/C# nowy system o Najwyższym Priorytecie i odchodząc miał prawie łzy w oczach 
+ * Zespół wrócił do utrzymywania monolitów (ale z użyciem F#!)
+ * Oczy koleżanki już tak się nie świecą na myśl o pracy
+ * A ja... odszedłem do startup-u
 
-Nie czekajcie aż ktoś zrobi to za was!
+Trzeba realizować swoje marzenia. Ja jedno spełniłem i teraz przyszła pora na następne! To był wspaniały rok!
+
+Nikt za Was marzeń nie zrealizuje:
 
 > Of all the words of mice and men, the saddest are 'It might have been.' -- Kurt Vonnegut
