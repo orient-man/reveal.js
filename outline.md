@@ -9,10 +9,10 @@ Po pierwszym miodowym miesiącu w nowej pracy nadszedł _kryzys_. Przyszłość 
 sprowadzać do 3 rodzajów aktywności:
 
 1. Usprawnianiu i łataniu dziur w wielkich gmachach aplikacji postawionych przez rzesze bezimiennych autorów (dosłownie, bo ktoś uciął historią przy migracji z SVN!).
-1. Uczestniczeniu w nasiadówkach, na których jako "Pan Ekspert IT" miałem ex catedra planować świetlaną przyszłość. W rzeczywistości dyskutować nad kwestiami w rodzaju (bez sensu!):
-   * czy zatrudniać programistów tylko do pisania testów automatycznych?
-   * jedno repozytorium czy wiele?
-   * kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?
+1. Uczestniczeniu w nasiadówkach, na których jako "Pan Ekspert" miałem _ex catedra_ planować świetlaną przyszłość. W rzeczywistości dyskutować nad (bezsensownymi) kwestiami w rodzaju:
+   * "Czy zatrudniać programistów tylko do pisania testów automatycznych?"
+   * "Jedno repozytorium czy wiele?"
+   * "Kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?"
 1. Gaszeniu pożarów na produkcji - co bywa ciekawe, ale jednak lepiej zapobiegać...
 
 Słowem: sytuacja nie była różowa. A przecież mogło być tak fajnie:
@@ -22,7 +22,7 @@ Słowem: sytuacja nie była różowa. A przecież mogło być tak fajnie:
 
 Chciałem _zrobić różnicę_ - tylko jak?
 
-I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na nowy system z nietrywialną logiką (zero CRUD-a!).
+I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na _Nowy System_ z nietrywialną logiką (zerro CRUD-a!).
 
 ### Wyzwania
 
@@ -35,10 +35,10 @@ I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na nowy system 
 
 Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy się opłaci, wykonalności, budżet, dostępność zespołu) i faktyczny start prac miał nastąpić za co najmniej 2 miesiące.
 
-Wstępne założenia - nie związane z F# - "oczywiste oczywistości", ale w świecie korpo rewolucyjne:
+Wstępne założenia - niezwiązane z F# - "oczywiste oczywistości", ale w świecie korpo rewolucyjne:
 
 1. Nie dodajemy kolejnego modułu do istniejacego systemu tylko robimy "mikroserwisy"
-1. Również nie powiekszamy długu technologicznego rozszerzając istniejący GUI (WinForms), ale tworzymy nowy (Web/SPA)
+1. Nie powiekszamy długu technologicznego rozszerzając istniejący GUI (WinForms), ale tworzymy nowy (Web/SPA)
 1. Minimalizujemy użycie wewnętrznych frameworków
 1. Stosujemy Test Driven Developement i piramidę testów
 1. Stosujemy podejście iteracyjne i wchodzimy na produkcję z Minimum Viable Product niezależnie od bankowych "big-bangowych" release-ów
@@ -51,9 +51,33 @@ TODO...
 
 ## "Mięcho" (takeaways)
 
-### Łatwe - techniczne problemy - "software"
+TODO...
 
-### Trudne - ludzkie - "hardware"
+### Łatwe - techniczne - problemy ("software")
+
+#### Po kolei, krok za krokiem
+
+TODO...
+
+ * FAKE
+ * Build process:
+   * Kompilator F# na build serwerze
+   * zależność od paczki FSharp.Core zamiast z GAC
+   * wszystkie potrzebne paczki w feedzie firmowym
+   * czy jakieś skrypty CI bazują na *.csproj?
+   * integracja z SonarQube (TODO)
+ * pierwszy kod: unit testy
+   * zwięzłe i czytelne
+   * TODO
+ * pierwszy moduł
+   * FSharpInterop (Func vs FSharpFunc, Option)
+   * funkcyjny kod w obiektowej polewie (do konsumpcji przez C#/kontener DI)
+   * Event interope (boli głowa)
+   * ważne, żeby nie poddać się w tym momencie (współpraca z C# to najmniej przyjemna część)
+ * pierwsza aplikacja
+   * kod będzie w stylu OOP
+
+### Trudne - ludzkie - problem ("hardware")
 
 Trzeba przekonać decydentów i interesariuszy.
 
@@ -76,9 +100,10 @@ Wszyscy oni będą zmuszeni do nauczenia się - choćby w stopniu podstawowym - 
 #### Idź, ewangelizuj!
 
 Ewangelizacja na każdym kroku (do znudzenia):
- * przykłady firm, które używają F# (jet.com etc.) i inne "success stories"
- * linki do prezentacji
+ * podrzucaj przykłady firm, które używają F# (jet.com etc.) i inne "success stories"
+ * podrzucaj linki do prezentacji
  * entuzjazm jest zaraźliwy!
+ * nie zrażaj się negatywnymi opiniami (ludzie boją się zmian, czasem ktoś ma zły dzień...)
 
 Historyjka:
 
@@ -93,16 +118,17 @@ Wystarczą podstawy. Jądro F# jest naprawdę proste i eleganckie. Otwieramy VSC
  * unie dyskryminowane
  * dopasowywanie wzorca
  * operator "pipe" czyli składnia "fluent"
+ * ...
 
 Warto zwrócić uwagę na relację tych konstrukcji do C#.
 
-Na koniec realistyczny przykład z waszej domeny prezentujący podejście Type Driven Development.
+Na koniec realistyczny przykład z waszej domeny prezentujący podejście _Type_ Driven Development.
 
 Historyjka: _W moim przypadku materiału miałem na 45 minut, ale szkolenie przerodziło się w żywą 3h dyskusję o różnych aspektach programowania funkcyjnego._
 
 [Przykładowy kod do szkolenia](https://gist.github.com/orient-man/14e9a9780de4d97239aa8d94ce944db8)
 
-Historyjki: błyszczące oczy i smutek przy odejściu... (??)
+TODO...
 
 Na koniec anegdota:
 
@@ -126,7 +152,65 @@ Na koniec anegdota:
 
 ## Proces ("learning process")
 
-TODO: Czegośmy się nauczyli w trakcie projektu...
+Czyli, czegośmy się nauczyli w trakcie projektu...
+
+### Stopniowe pozbywanie się "obiektowych" przyzwyczajeń
+
+#### Kompozycja albo Dependency Inversion
+
+ * można żyć bez kontenera DI
+ * w tej roli świetnie sprawdzają się funkcje wyższego rzędu i częściowa aplikacja
+ * jeszcze lepiej minimalizować użycie powyższych i gros logiki umieszczać w czystych funkcjach
+ * kompozycję (CompositionRoot) również należy testować
+
+#### Ukrywanie informacji
+
+W OOP to podstawa, ale w FP/F# jest... inaczej:
+
+ * ukrywamy struktury bo nie chcemy, aby ktoś niepowołany zmienił stan
+ * co gdy nie ma stanu, bo wszystko jest niezmienne (immutable)?
+ * w FP/F# oddzielamy logikę od struktur danych - często prostych (listy, krotki)
+ * przy złożonych strukturach można użyć prywatnych unii lub sygnatur (plików *.fsi)
+ * nie jest to jednak tak często potrzebne
+
+```fsharp
+module EmailAddress
+	// string representation is hidden
+	type EmailAddress = private EmailAddress of string
+	let create s = EmailAddress s
+	let toString (EmailAddress s) = s
+```
+
+### Przestrogi okupione krwią, potem i łzami
+
+ * zły kod da się pisać w każdym języku!
+ * kod który napiszesz w pierwszych miesiącach nauki języka będzie zły choćby nie wiem co
+ * brak typów podanych explicite i komunikaty kompilatora na początku nie pomagają
+ * trzeba walczyć z pokusą nadużywania operatorów: |>, <|, >>, List.filter ((<=) 5) etc.
+ * zbyt wiele funkcyjnych parametrów boli (patrz DI)
+ * nie wszystko jest krotką albo listą (rekordy!, unie!)
+
+### Życie to sztuka kompromisu
+
+Nie wszystko musi/może być innowacyjne. M.in. ze względów czasowych, wymagań niefunkcjonalnych i operacyjnych:
+ 
+ * Nie użyliśmy Suave/WebSharper/Fable, ale WebApi/Owin/JavaScript/RiotJs
+ * Zamiast HTTP/REST użyliśmy WCF (standard w banku)
+ * Mimo wybitnie pasującego problemu nie użyliśmy EventStore, ale własnej - "wystarczająco dobrej" - implementacji
+
+Za to użyliśmy i sprawdziło się: agentów (MailboxProcessor), FSharp.Control.Reactive, FSharp.Data...
+
+### Kawałki układanki zaczynają do siebie pasować
+
+Po jakimiś czasie nadchodzi nirwana ("Functional Pit of Success"):
+
+ * domyślnie wszystko jest takie jak powinno być (immutability, brak null)
+ * type inference to - biała - magia
+ * automatyczna generalizacja jest f-a-n-t-a-s-t-y-cz-n-a
+ * agenci (MailboxProcessor) + async rządzą!
+ * algebraiczne typy danych pozwalają - wreszcie! - dobrze modelować domenę
+ * zasady SOLID/CleanCode nadal obowiązują tylko łatwiej ich przestrzegać
+ * naturalnie dążymy do architektury Port & Adapters (heksagonalnej) z "core domain" w środku
 
 ## Podsumowanie
 
