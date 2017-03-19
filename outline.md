@@ -37,11 +37,15 @@ Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy si
 
 Wstępne założenia - niezwiązane z F# - "oczywiste oczywistości", ale w świecie korpo rewolucyjne:
 
+TODO: slajd "captain Obvious"
+
 1. Nie dodajemy kolejnego modułu do istniejacego systemu tylko robimy "mikroserwisy"
 1. Nie powiekszamy długu technologicznego rozszerzając istniejący GUI (WinForms), ale tworzymy nowy (Web/SPA)
 1. Minimalizujemy użycie wewnętrznych frameworków
 1. Stosujemy Test Driven Developement i piramidę testów
 1. Stosujemy podejście iteracyjne i wchodzimy na produkcję z Minimum Viable Product niezależnie od bankowych "big-bangowych" release-ów
+
+To wszystko oczywiście nie w kontrze do banku, ale jak najbardziej w zgodzie ze "strategią IT" 
 
 Teraz był czas na przemyślenie rozwiązania i prototypy "Proof-of-Concept". Decyzja o użyciu F# została odłożona.
 
@@ -51,31 +55,6 @@ TODO...
 
 ## "Mięcho" (takeaways)
 
-TODO...
-
-### Łatwe - techniczne - problemy ("software")
-
-#### Po kolei, krok za krokiem
-
-TODO...
-
- * FAKE
- * Build process:
-   * Kompilator F# na build serwerze
-   * zależność od paczki FSharp.Core zamiast z GAC
-   * wszystkie potrzebne paczki w feedzie firmowym
-   * czy jakieś skrypty CI bazują na *.csproj?
-   * integracja z SonarQube (TODO)
- * pierwszy kod: unit testy
-   * zwięzłe i czytelne
-   * TODO
- * pierwszy moduł
-   * FSharpInterop (Func vs FSharpFunc, Option)
-   * funkcyjny kod w obiektowej polewie (do konsumpcji przez C#/kontener DI)
-   * Event interope (boli głowa)
-   * ważne, żeby nie poddać się w tym momencie (współpraca z C# to najmniej przyjemna część)
- * pierwsza aplikacja
-   * kod będzie w stylu OOP
 
 ### Trudne - ludzkie - problem ("hardware")
 
@@ -101,6 +80,7 @@ Wszyscy oni będą zmuszeni do nauczenia się - choćby w stopniu podstawowym - 
 
 Ewangelizacja na każdym kroku (do znudzenia):
  * podrzucaj przykłady firm, które używają F# (jet.com etc.) i inne "success stories"
+ * F# jako magnes przyciągający talenty!
  * podrzucaj linki do prezentacji
  * entuzjazm jest zaraźliwy!
  * nie zrażaj się negatywnymi opiniami (ludzie boją się zmian, czasem ktoś ma zły dzień...)
@@ -128,6 +108,14 @@ Historyjka: _W moim przypadku materiału miałem na 45 minut, ale szkolenie prze
 
 [Przykładowy kod do szkolenia](https://gist.github.com/orient-man/14e9a9780de4d97239aa8d94ce944db8)
 
+Do kwestii nauki będę jeszcze kilka razy wracał. Ważne: takie szkolenie jest może nawet bardziej wartościowe dla prowadzącego.
+
+#### O polityce i odpowiedzialności
+
+ * dobrze zacząć od sukcesu
+ * trzeba dzieliś się nawet drobnymi sukcesami
+ * trzeba umieć wziąć na siebie odpowiedzialność: pomogać, uspokajać
+
 TODO...
 
 Na koniec anegdota:
@@ -150,6 +138,39 @@ Na koniec anegdota:
 > - No wie Pan?! To zięć Billa Gatesa!
 > - Cudownie! To zmienia postać rzeczy!
 
+### Łatwe - techniczne - problemy ("software")
+
+#### Po kolei, krok za krokiem
+
+TODO...
+
+ * FAKE
+ * Build process:
+   * Kompilator F# na build serwerze
+   * zależność od paczki FSharp.Core zamiast z GAC
+   * wszystkie potrzebne paczki w feedzie firmowym
+   * czy jakieś skrypty CI bazują na *.csproj?
+   * integracja z SonarQube (TODO)
+     * problemy z dotCover
+     * starsze wersje NUnit zachowują się dziwnie...
+ * pierwszy kod: unit testy
+   * zwięzłe i czytelne
+   * testy są/powinny być proste - dobry poligon do nauki składni
+   * na początek drobne smaczki: długie nazwy testów, "use", asercja FsUnit
+   * z czasem odkrywamy: FsCheck, Unqoute i łatwość tworzenia własnych DSL-i (TODO: przykład?)
+ * pierwszy moduł
+   * FSharpInterop (Func vs FSharpFunc, Option)
+   * funkcyjny kod w obiektowej polewie (do konsumpcji przez C#/kontener DI)
+   * Event interop (boli głowa)
+   * ważne, żeby nie poddać się w tym momencie (współpraca z C# to najmniej przyjemna część)
+ * pierwsza aplikacja
+   * kod będzie w stylu OOP (niespodzianka!)
+   * najlpiej mała, bo będziesz chciał ją przepisać za 3-mce :)
+ * inne:
+   * dobre ćwiczenia na boku: to przepisać istnijącą małą aplikację 1-1, a potem iteracyjnie poprawiać
+   * wszystkie prototypu, PoC etc.
+   * warto dzielić się każdym, nawet drobnym odkryciem
+
 ## Proces ("learning process")
 
 Czyli, czegośmy się nauczyli w trakcie projektu...
@@ -161,7 +182,7 @@ Czyli, czegośmy się nauczyli w trakcie projektu...
  * można żyć bez kontenera DI
  * w tej roli świetnie sprawdzają się funkcje wyższego rzędu i częściowa aplikacja
  * jeszcze lepiej minimalizować użycie powyższych i gros logiki umieszczać w czystych funkcjach
- * kompozycję (CompositionRoot) również należy testować
+ * kompozycję (CompositionRoot) również należy testować i trzymać na ciągłej diecie
 
 #### Ukrywanie informacji
 
@@ -186,9 +207,12 @@ module EmailAddress
  * zły kod da się pisać w każdym języku!
  * kod który napiszesz w pierwszych miesiącach nauki języka będzie zły choćby nie wiem co
  * brak typów podanych explicite i komunikaty kompilatora na początku nie pomagają
+   * adnotacja z typami warto pozostawić na poziomie API pomiędzy modułami
  * trzeba walczyć z pokusą nadużywania operatorów: |>, <|, >>, List.filter ((<=) 5) etc.
  * zbyt wiele funkcyjnych parametrów boli (patrz DI)
  * nie wszystko jest krotką albo listą (rekordy!, unie!)
+ * rekurencja nie zawsze jest naturalna (ale jak już fold kliknie!)
+ * nic nie poradzę: nie lubię części OOP w F# - niby to samo co C#, ale inaczej - czasem konieczne, ale przez 90% czasu nie (F# Good Parts)
 
 ### Życie to sztuka kompromisu
 
@@ -211,6 +235,13 @@ Po jakimiś czasie nadchodzi nirwana ("Functional Pit of Success"):
  * algebraiczne typy danych pozwalają - wreszcie! - dobrze modelować domenę
  * zasady SOLID/CleanCode nadal obowiązują tylko łatwiej ich przestrzegać
  * naturalnie dążymy do architektury Port & Adapters (heksagonalnej) z "core domain" w środku
+
+TODO: rozwinąć wątek Ports & Adapters??
+TODO: rozmiary plików, modułów...
+
+Inne objawy: trudno oderwać się od kodowania, nieustające dyskusje o kodzie, roześmiane japy i błyszczące oczy ;-).
+
+F# prawie u wszystkich programistów wywołuje miłość od pierwszego wejrzenia - po roku i "konsumpcji" - jest to już trwały związek.
 
 ## Podsumowanie
 
