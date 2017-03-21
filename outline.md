@@ -3,7 +3,7 @@
 
 ## Wstęp: moja historia ("story arc")
 
-### Kontekst
+### Wielka Depresja (kontekst)
 
 Po pierwszym miodowym miesiącu w nowej pracy nadszedł _kryzys_. Przyszłość wydawała się
 sprowadzać do 3 rodzajów aktywności:
@@ -31,7 +31,7 @@ I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na _Nowy System
 * Będąc jedyną osobą w zespole znającą F# - i to w stopniu początkującym - musiałem nauczyć go innych. Jak to zrobić szybko?
 * Co trzeba zrobić, aby F# stał się w ogóle dostępną opcją z punktu widzenia naszych procesów Continous Delivery (kompilacja, paczkowanie, instalacja, badanie jakości kodu)?
 
-### Dostępne rozwiązania (plan)
+### Dostępne rozwiązania (plan gry)
 
 Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy się opłaci, wykonalności, budżet, dostępność zespołu) i faktyczny start prac miał nastąpić za co najmniej 2 miesiące.
 
@@ -45,7 +45,7 @@ TODO: slajd "captain Obvious"
 1. Stosujemy Test Driven Developement i piramidę testów
 1. Stosujemy podejście iteracyjne i wchodzimy na produkcję z Minimum Viable Product niezależnie od bankowych "big-bangowych" release-ów
 
-To wszystko oczywiście nie w kontrze do banku, ale jak najbardziej w zgodzie ze "strategią IT" 
+To wszystko oczywiście nie w kontrze do banku, ale jak najbardziej w zgodzie ze "strategią IT"
 
 Teraz był czas na przemyślenie rozwiązania i prototypy "Proof-of-Concept". Decyzja o użyciu F# została odłożona.
 
@@ -113,8 +113,8 @@ Do kwestii nauki będę jeszcze kilka razy wracał. Ważne: takie szkolenie jest
 #### O polityce i odpowiedzialności
 
  * dobrze zacząć od sukcesu
- * trzeba dzieliś się nawet drobnymi sukcesami
- * trzeba umieć wziąć na siebie odpowiedzialność: pomogać, uspokajać
+ * trzeba dzielić się nawet drobnymi sukcesami
+ * trzeba umieć wziąć na siebie odpowiedzialność: pomogać, uspokajać, wziąć na klatę
 
 TODO...
 
@@ -217,7 +217,7 @@ module EmailAddress
 ### Życie to sztuka kompromisu
 
 Nie wszystko musi/może być innowacyjne. M.in. ze względów czasowych, wymagań niefunkcjonalnych i operacyjnych:
- 
+
  * Nie użyliśmy Suave/WebSharper/Fable, ale WebApi/Owin/JavaScript/RiotJs
  * Zamiast HTTP/REST użyliśmy WCF (standard w banku)
  * Mimo wybitnie pasującego problemu nie użyliśmy EventStore, ale własnej - "wystarczająco dobrej" - implementacji
@@ -249,7 +249,7 @@ I żyli długo i szczęśliwie... Niestety finał jest słodko-gorzki - jak to w
  * System jest na produkcji ku ogólnemu zadowoleniu - Yupi!
  * Dostałem za niego roczną nagrodę $$$
  * Ale... nasz biznes przegrał coroczną "bitwę o mendeje", budżet się skurczył i na razie nie ma dalszego ciągu...
- * Kolega został wypożyczony do zespołu rzeźbiącego w Angularze 2/C# nowy system o Najwyższym Priorytecie i odchodząc miał prawie łzy w oczach 
+ * Kolega został wypożyczony do zespołu rzeźbiącego w Angularze 2/C# nowy system o Najwyższym Priorytecie i odchodząc miał prawie łzy w oczach
  * Zespół wrócił do utrzymywania monolitów (ale z użyciem F#!)
  * Oczy koleżanki już tak się nie świecą na myśl o pracy
  * A ja... odszedłem do startup-u
