@@ -64,7 +64,7 @@ Rok niebezpiecznego życia, czyli F# na produkcji - ToC
    - Najważniejsze to dobrze zacząć
    - Podziel się (małym sukcesem, odkryciem, wątpliwością...)
    - Obawy weź na klatę
-   - To tylko gra
+   - Weź na luz - to tylko gra
 
 ## Maszyny
 
@@ -73,7 +73,7 @@ Rok niebezpiecznego życia, czyli F# na produkcji - ToC
  * FAKE it till you make it
 
    - Nie jest trudno pokonać MSBuild/PowerShell
-   - Najnudniejesze zadanie staje się fajne
+   - Najnudniejsze zadanie staje się fajne
    - Potrafi (chyba) wszystko
 
  * Wąska ścieżka na produkcję
@@ -126,7 +126,7 @@ Rok niebezpiecznego życia, czyli F# na produkcji - ToC
  * Zmiana przyzwyczajeń: ukrywanie informacji
 
    - Dlaczego ukrywamy? Bo chronimy stan. Wróć!
-   - Czesto struktury wychodzą proste: listy, krotki
+   - Często struktury wychodzą proste: listy, krotki
    - ...lub kod jest generyczny
    - W razie Niemca: prywatne unie i sygnatury
 
