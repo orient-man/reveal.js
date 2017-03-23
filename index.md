@@ -52,7 +52,7 @@ https://blog.toggl.com/2017/02/seven-circles-of-developer-hell/
 
 ### Wielka Depresja
 
-Programowanie to (wybierz 1 lub więcej):
+Dziś w menu (wybierz 1 lub więcej):
 
 - Utrzymanie dziedzictwa
 - Nasiadówki
@@ -169,7 +169,7 @@ Krok za krokiem
 
 - AAA... to świetny poligon do nauki
 - Zwięzłe i czytelne
-- Im dalej w las tym jaśniej: FsUnit, Unqoute, FsCheck, własne DSL...
+- Im dalej w las tym jaśniej: FsUnit, Unquote, FsCheck, własne DSL...
 
 ---
 
