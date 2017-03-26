@@ -1,4 +1,4 @@
-﻿## [Rok niebezpiecznego życia, czyli F# na produkcji]()
+﻿## [Rok niebezpiecznego życia, czyli F# na produkcji](./)
 
 Marcin Malinowski
 
@@ -48,6 +48,10 @@ Jak wejść z F# na produkcję i pozostać przy życiu. Moje doświadczenia z wp
 
 https://blog.toggl.com/2017/02/seven-circles-of-developer-hell/
 
+Note:
+
+Wszystko zaczęło się od sytuacji, która spotyka to wielu w naszej branży. Po pierwszych miodowych miesiącach w nowej pracy nadszedł _kryzys_. 
+
 ---
 
 ### Wielka Depresja
@@ -58,6 +62,25 @@ Dziś w menu (wybierz 1 lub więcej):
 - Nasiadówki
     > „Tony papieru, tony analiz; Genialne myśli, tłumy na sali...” -- Elektryczne Gitary
 - Strażak Sam w akcji
+
+Nie tak miało być!
+
+Note:
+1. Usprawnianiu i łataniu dziur w wielkich gmachach aplikacji postawionych przez rzesze bezimiennych autorów (migracja svn -> git)
+1. Jako "Pan Ekspert" miałem _ex catedra_ planować świetlaną przyszłość:
+  -  "Czy zatrudniać programistów tylko do pisania testów automatycznych?"
+  - "Jedno repozytorium czy wiele?"
+  - "Kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?"
+1. Bardzo ciekawe, ale po pewnym czasie zaczyna się dostrzegać pewien wzorzec...
+
+Słowem: sytuacja nie była różowa. A przecież mogło być tak fajnie:
+
+* ciekawa domena (rynek walutowy, Hedge Accounting czyli rachunkowość zabezpieczeń)
+* i naprawdę niegłupi ludzie zarówno w IT, jaki i w biznesie
+
+Chciałem _zrobić różnicę_ - tylko jak?
+
+I wtedy pojawiła jutrzenka nadziei: biznes wyszedł z pomysłem na _Nowy System_ z nietrywialną logiką (zerro CRUD-a!).
 
 ---
 
@@ -70,9 +93,21 @@ F# rządzi i co dalej:
 - Jak szybko nauczyć siebie i innych?
 - Jak to wdrożyć na produkcję?
 
+Note:
+
+* Bez dowodu, bo to nie jest prezentacja o tym...
+* Jak nie wejść po raz drugi do tej samej rzeki i nie popełnić błędów poprzedników? (monolit + kod spaghetti)
+* Od kilku lat zajmowałem się programowaniem funkcyjnym: i w pracy, i jako prelegent. Niemniej, używałem do tego celu jedynie języka C# i nie mogłem pochwalić się nawet linijką kodu produkcyjnego napisanego w F#. Jak przekonać innych do nowego języka, który nie był do tej pory używany w banku?
+* Będąc jedyną osobą w zespole znającą F# - i to w stopniu początkującym - musiałem nauczyć go innych. Jak to zrobić szybko?
+* Co trzeba zrobić, aby F# stał się w ogóle dostępną opcją z punktu widzenia naszych procesów Continous Delivery (kompilacja, paczkowanie, instalacja, badanie jakości kodu)?
+
 ---
 
 <!-- .slide: data-background="./img/captain_obvious.jpg" data-background-size="contain" -->
+
+Note:
+
+Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy się opłaci, wykonalności, budżet, dostępność zespołu) i faktyczny start prac miał nastąpić za co najmniej 2 miesiące.
 
 ---
 
@@ -85,10 +120,26 @@ F# rządzi i co dalej:
 - Odraczamy trudne decyzje
 - Działamy w zgodzie (ze *Strategią*)
 
+Note:
+
+1. Nie dodajemy kolejnego modułu do istniejacego systemu tylko robimy "mikroserwisy"
+1. Nie powiekszamy długu technologicznego rozszerzając istniejący GUI (WinForms), ale tworzymy nowy (Web/SPA)
+1. Minimalizujemy użycie wewnętrznych frameworków
+1. Stosujemy Test Driven Developement i piramidę testów
+1. Stosujemy podejście iteracyjne i wchodzimy na produkcję z Minimum Viable Product niezależnie od bankowych "big-bangowych" release-ów
+
+To wszystko oczywiście nie w kontrze do banku, ale jak najbardziej w zgodzie ze "strategią IT" (z duchem reformatorskim).
+
+Teraz był czas na przemyślenie rozwiązania i prototypy "Proof-of-Concept". Decyzja o użyciu F# została odłożona.
+
 ***
 
 <!-- .slide: data-background="./img/arrival_movie.jpg" data-background-size="contain" -->
 ## Ludzie
+
+Note:
+
+Nadszedł czas, aby przekonać innych do F#-a, oraz aby się go nauczyć na żywym organizmie.
 
 ---
 
@@ -100,6 +151,14 @@ F# rządzi i co dalej:
 - Czytelnik, głupcze!
 - Programista, tester, analityk, menedżer, "biznes"...
 
+Note:
+
+Należy pamiętać, że _styczność z kodem mają nie tylko programiści_. Kod jest przede wszystkim czytany (i pod tym kątem należy go optymalizować). A często czytają go również analitycy i testerzy, a czasem również menedżerzy (ex programiści) lub nawet biznes!
+
+Wszyscy oni będą zmuszeni do nauczenia się - choćby w stopniu podstawowym - nowego języka.
+
+Z programistami jest najłatwiej (choć bywają ciężko doświadczeni przez los...), bo generalnie lubią nowe technologie. Pisząc kod jest też najłatwiej się go nauczyć.
+
 ---
 
 <!-- .slide: data-background="#E65100" -->
@@ -109,7 +168,22 @@ F# rządzi i co dalej:
 - Świeć przykładami
 - Obawa przed zmianą jest naturalna
 - ...ale może to tylko zły dzień
-- Entuzjazm jest zaraźliwy (znowu)
+- Entuzjazm jest zaraźliwy
+    > Poza tym uważam, że ~~Kartaginę należy zniszczyć~~ w F# da się to zrobić o wiele lepiej
+
+Książka: [Driving Technical Change](https://pragprog.com/book/trevan/driving-technical-change)
+
+Note:
+
+Nudzić: "success stories" (jet.com, inne banki), prezentacje, kawałki kodu.
+
+Obawy przed zmianą nie brać osobiście. 
+
+Typy sceptyków: niedoinformowani, stadni, cynicy, wypaleni, przygnieceni czasem, szef, irracjonalni 
+
+TODO: może slajd z tego?
+
+Pokazujemy, że da się lepiej - a jak? Szkolenie!
 
 ---
 
@@ -118,13 +192,21 @@ F# rządzi i co dalej:
 
 ["The Best of"](https://gist.github.com/orient-man/14e9a9780de4d97239aa8d94ce944db8) (na 45-60 minut):
 
-- funkcje
-- typy: krotki, rekordy, listy
-- unie i dopasowywanie wzorca
-- kompozycyjność: operator "|>"
-- narzędzia: REPL, VSCode (Vim), VS
-- meta: type inference, ekspresywność, F# vs. C#
+- tylko funkcyjne jądro
+- ekspresywność
+- szybka pętla zwrotna (REPL)
+- system typów, który prowadzi za rękę
 - DEMO: Type Driven Development
+
+Note:
+
+Na koniec realistyczny przykład z waszej domeny prezentujący podejście _Type_ Driven Development (termin Marka Seemanna).
+
+Historyjka: _W moim przypadku materiału miałem na 45 minut, ale szkolenie przerodziło się w żywą 3h dyskusję o różnych aspektach programowania funkcyjnego._
+
+TestDD vs TypeDD
+
+Do kwestii nauki będę jeszcze kilka razy wracał. Ważne: takie szkolenie jest może nawet bardziej wartościowe dla prowadzącego.
 
 ---
 
@@ -133,8 +215,39 @@ F# rządzi i co dalej:
 
 - Najważniejsze to dobrze zacząć
 - Podziel się (małym sukcesem, odkryciem, wątpliwością...)
+- Pair Programming!
 - Obawy weź na klatę
 - Weź na luz - to tylko gra
+
+Note:
+
+Kończąc ten wątek:
+
+- zaprojektuj pierwszy sukces - to podnosi morale
+- szkoda czasu na samotną walkę, ktoś może się zniechęcić
+- Pair Programming! Najlepiej się sprawdza w trudnych a nie żmudnych problemach. Tu właśnie taki mamy.
+- przeglądy kodu częściej
+- "dasz radę, a jak nie to Ci pomogę", "tak, dowieziemy Sprint", "podejrzane jest jak ktoś dowozi każdy Sprint"
+
+Anegdota (z ukrytym przekazem):
+
+> Mówi ojciec do syna:
+> - Synu, znalazłem ci wspaniałą kandydatkę na żonę!
+> - EEEE..... tato... sam potrafię znaleźć sobie dziewczynę? a kto to jest?
+> - To córka Billa Gatesa!
+> - OOO! Suuuper! Trzeba było tak od razu!
+>
+> Ojciec udaje się do Billa Gatesa na rozmowę:
+> - Dzień dobry Panu! Wydaje mi się, że znalazłem doskonałego kandydata  na męża Pańskiej córki!
+> - Wie Pan... ale ja nie szukam męża dla mojej córki?
+> - Ależ to wiceprezes Banku Światowego!
+> - Ooo! Chyba, że tak!
+>
+>Następnie ojciec udaje się do prezesa Banku Światowego:
+> - Witam Pana Panie prezesie! Przychodzę z dobrą nowiną - mam idealnego kandydata na wiceprezesa w Pańskim banku.
+> - No tak.. Ale ja nie szukam nikogo na tę posadę.
+> - No wie Pan?! To zięć Billa Gatesa!
+> - Cudownie! To zmienia postać rzeczy!
 
 ***
 
@@ -142,6 +255,12 @@ F# rządzi i co dalej:
 ## Maszyny
 
 Krok za krokiem
+
+Note:
+
+Z maszynami jest prosto - można je okiełznać za pomocą kodu.
+
+TODO: nawiązanie do historii projektu
 
 ---
 
