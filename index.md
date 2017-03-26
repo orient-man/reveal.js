@@ -50,7 +50,7 @@ https://blog.toggl.com/2017/02/seven-circles-of-developer-hell/
 
 Note:
 
-Wszystko zaczęło się od sytuacji, która spotyka to wielu w naszej branży. Po pierwszych miodowych miesiącach w nowej pracy nadszedł _kryzys_. 
+Wszystko zaczęło się od sytuacji, która spotyka wielu w naszej branży. Po pierwszych miodowych miesiącach w nowej pracy nadszedł _kryzys_. 
 
 ---
 
@@ -70,6 +70,7 @@ Note:
 1. Jako "Pan Ekspert" miałem _ex catedra_ planować świetlaną przyszłość:
   -  "Czy zatrudniać programistów tylko do pisania testów automatycznych?"
   - "Jedno repozytorium czy wiele?"
+  - "Jaki procent pokrycia?"
   - "Kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?"
 1. Bardzo ciekawe, ale po pewnym czasie zaczyna się dostrzegać pewien wzorzec...
 
@@ -105,6 +106,14 @@ Note:
 
 <!-- .slide: data-background="./img/captain_obvious.jpg" data-background-size="contain" -->
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+> „Houston, we have a problem”
+
 Note:
 
 Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy się opłaci, wykonalności, budżet, dostępność zespołu) i faktyczny start prac miał nastąpić za co najmniej 2 miesiące.
@@ -112,8 +121,6 @@ Szczęście nam sprzyjało, bo korporacyjne młyny mielą powoli (analiza czy si
 ---
 
 ### Plan gry albo oczywiste oczywistości
-
-> „Houston, we have a problem”
 
 - Nie powiększamy problemu
 - Stosujemy dobre praktyki
@@ -139,11 +146,11 @@ Teraz był czas na przemyślenie rozwiązania i prototypy "Proof-of-Concept". De
 
 Note:
 
-Nadszedł czas, aby przekonać innych do F#-a, oraz aby się go nauczyć na żywym organizmie.
+Nadszedł czas, aby przekonać innych do F#-a, oraz aby się go nauczyć na żywym organizmie, ale w kontrolowany sposób.
 
 ---
 
-<!-- .slide: data-background="#E65100" -->
+<!-- .slide: data-background="#2E7D32" -->
 ### Kim są Oni?
 
 > „Optimize for readability first”
@@ -161,7 +168,7 @@ Z programistami jest najłatwiej (choć bywają ciężko doświadczeni przez los
 
 ---
 
-<!-- .slide: data-background="#E65100" -->
+<!-- .slide: data-background="#2E7D32" -->
 ### Idź, ewangelizuj!
 
 - Entuzjazm jest zaraźliwy
@@ -179,15 +186,17 @@ Nudzić: "success stories" (jet.com, inne banki), prezentacje, kawałki kodu.
 
 Obawy przed zmianą nie brać osobiście. 
 
-Typy sceptyków: niedoinformowani, stadni, cynicy, wypaleni, przygnieceni czasem, szef, irracjonalni 
+Typy sceptyków: niedoinformowani, idący za stadem, cynicy, wypaleni, przygnieceni czasem, szef, irracjonalni.
+
+> Nie ma czasu, aby zrobić dobrze, ale jest czas aby zrobić 2x
 
 TODO: może slajd z tego?
 
-Pokazujemy, że da się lepiej - a jak? Szkolenie!
+Entuzjazm nie wystarczy! Pokazujemy, że da się lepiej - a jak? Szkolenie!
 
 ---
 
-<!-- .slide: data-background="#E65100" -->
+<!-- .slide: data-background="#2E7D32" -->
 ### Zrób szkolenie!
 
 ["The Best of"](https://gist.github.com/orient-man/14e9a9780de4d97239aa8d94ce944db8) (na 45-60 minut):
@@ -197,6 +206,7 @@ Pokazujemy, że da się lepiej - a jak? Szkolenie!
 - szybka pętla zwrotna (REPL)
 - system typów, który prowadzi za rękę
 - DEMO: Type Driven Development
+  - TDD = pętla zwrotna + eksploracja -> dobra architektura 
 
 Note:
 
@@ -204,13 +214,13 @@ Na koniec realistyczny przykład z waszej domeny prezentujący podejście _Type_
 
 Historyjka: _W moim przypadku materiału miałem na 45 minut, ale szkolenie przerodziło się w żywą 3h dyskusję o różnych aspektach programowania funkcyjnego._
 
-TestDD vs TypeDD
+Test vs Type - opisać te 2 podejścia...
 
 Do kwestii nauki będę jeszcze kilka razy wracał. Ważne: takie szkolenie jest może nawet bardziej wartościowe dla prowadzącego.
 
 ---
 
-<!-- .slide: data-background="#E65100" -->
+<!-- .slide: data-background="#2E7D32" -->
 ### Wespół w zespół
 
 - Najważniejsze to dobrze zacząć
@@ -251,16 +261,16 @@ Anegdota (z ukrytym przekazem):
 
 ***
 
-<!-- .slide: data-background="rgb(123, 22, 29)" -->
+<!-- .slide: data-background="./img/terminator.jpg" -->
 ## Maszyny
 
 Krok za krokiem
 
 Note:
 
-Z maszynami jest prosto - można je okiełznać za pomocą kodu.
+Przed nami były 2 miesiące, aby rozwiązać wszystkie problemy techniczne.
 
-TODO: nawiązanie do historii projektu
+Z maszynami - inaczej niż ludźmi - jest prosto. Można je okiełznać za pomocą kodu. Ważne, żeby robić to krok za krokiem.
 
 ---
 
@@ -270,6 +280,12 @@ TODO: nawiązanie do historii projektu
 - Nie jest trudno pokonać MSBuild/PowerShell
 - Najnudniejsze zadanie staje się fajne
 - Potrafi (chyba) wszystko
+
+Note:
+
+FAKE to MAKE.
+
+Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, podniesienie środowiska testowego, przygotowanie bazy testowej, testy integracyjne...
 
 ---
 
@@ -400,25 +416,15 @@ Nie wszystko musi/może być innowacyjne:
 
 ***
 
-<!-- .slide: data-background="#2E7D32" -->
-## Podsumowanie
+<!-- .slide: data-background="./img/castle.gif" -->
+## The End
 
 I żyli długo i szczęśliwie...
-.
 
-.
+&nbsp;
 
-.
+&nbsp;
 
-.
-
-.
-
-... prawie :)
-
----
-
-<!-- .slide: data-background="#2E7D32" -->
-## The End
+&nbsp;
 
 > „Of all the words of mice and men, the saddest are 'It might have been.'” -- Kurt Vonnegut
