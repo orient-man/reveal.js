@@ -283,7 +283,7 @@ Z maszynami - inaczej niż ludźmi - jest prosto. Można je okiełznać za pomoc
 
 Note:
 
-FAKE to MAKE.
+FAKE to MAKE. Zero zależności.
 
 Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, podniesienie środowiska testowego, przygotowanie bazy testowej, testy integracyjne...
 
@@ -297,6 +297,12 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Unit testy, pokrycie kodu, SonarQube etc.
 - Ukryte zależności w skryptach CI (buu!)
 
+Note:
+
+- Poprawki do SonarQube plugin (na szczęście projekt ożył).
+- Niestety wszystkie obecne narzędzia do pokrycia kodu wrednie zaniżają. Nie fetyszyzujmy liczby, ale jeśli faktyczne pokrycie jest 95%, a pokazuje się 65 to przykro - nie wygramy rankingu...
+- Podobne problemy pewnie sprawia każda nowa wdrażana technologia.
+
 ---
 
 <!-- .slide: data-background="rgb(123, 22, 29)" -->
@@ -304,7 +310,17 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 
 - AAA... to świetny poligon do nauki
 - Zwięzłe i czytelne
-- Im dalej w las tym jaśniej: FsUnit, Unquote, FsCheck, własne DSL...
+- Im dalej w las tym jaśniej: FsUnit, Unquote, FsCheck, Canopy, expecto, własne DSL...
+
+Note:
+
+Testy mają - albo powinny mieć - prostą strukturę (3A), co sprawia, że są świetnym poligonem do nauki.
+
+Poczynając od drobnych smaczków jak nazwy testów pełnymi zdaniami czy implementacje interfejsów inline (no mocks!), a kończąć na strukturalna równości, co znakomicie upraszcza asercje.
+
+Wychodząc poza testy jednostkowe w kierunku integracyjnych, UI czy end2end to przydaje się łatwość tworzenia własnych DSL (Canopy).
+
+My: testy wydajnościowe (analityk). TODO: Przykład
 
 ---
 
@@ -316,6 +332,23 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Null zostawiamy w przedpokoju
 - Twardy bądź jak Roman Bratny
 
+Note:
+
+Ograniczenia:
+- warstwa danych to istniejacy ORM (Linq-to-Sql)
+- kod był konsumowany z C# via kontener DI (Autofac)
+- kod musiał wołać brzydkie API C# (możliwy null, parametry "out")
+
+Zdziwienia:
+- LINQ w F# jest _inny_ (obsługa NULL sensowna, ale zdziwienie)
+- Func <> FSharpFunc w przeciewieństwie np. do krotek
+- konieczne przejście null <-> Option
+- CLIMutableAttribute
+
+Są jeszcze gorsze problemy np. eventy.
+
+Nie polecam mieszanych projektów C#/F#. A jeśli już to od początku z tą myślą - i dbamy o API.
+
 ---
 
 <!-- .slide: data-background="rgb(123, 22, 29)" -->
@@ -324,6 +357,14 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Niech będzie prosta
 - Będzie w stylu OOP choćby nie wiem co
 - Będziesz chciał(a) ją przepisać za 3 m-ce
+
+Note:
+
+W naszym przypadku to była integracja, interfejs pomiędzy dwoma systemami.
+
+Parsowane pliki -> protokół Tibco i w drugą stronę (ciekawiej bo API PUSH/observer).
+
+Dziś bym to zrobił inaczej.
 
 ---
 
@@ -337,10 +378,22 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Przepisuj kod obiektowy tak długo aż stanie się funkcyjny
 - Dziel się każdym odkryciem lub przeszkodą z Zespołem
 
+Note:
+
+Kończąc wątek okiełznania maszyny/języka, aby robił to co my chcemy. I abyśmy potrafili się w nim jasno komunikować. Tak jak z językiem mówionym - nie wystarczy bierna znajomość.
+
+Kod, który już znamy na wylot, przepiszmu 1-1 na F#.
+
 ***
 
 <!-- .slide: data-background="./img/he-man.jpg" data-background-size="contain" -->
 ## Mocy przybywaj!
+
+Note:
+
+Startujemy projekt! Klamka zapadła, piszemy w F#.
+
+W tej części opowiem nie o małym 2-tygodniowym projekcie, tylko o czymś co powstawało dobrych kilka miesięcym, zatem zupełnie inna skala problemu.
 
 ---
 
@@ -356,6 +409,13 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Testuj i trzymaj na diecie swój CompositionRoot
 - Keep It Simple Short: 10-15 plików, < 100 LoC
 
+Note:
+
+- Zamiast kontenera świetnie sprawdzają się funkcje wyższego rzędu i częściowa aplikacja.
+- Jeszcze lepiej minimalizować użycie powyższych i gros logiki umieszczać w czystych funkcjach. Oddzielać czystą logikę od efektów ubocznych i kompozycji. Wyrażać efekty deklaratywnie (unie). Jeśli nie będziemy tego robić, to kompozycja będzie nas bolała. Polecam wykłady Marka Seemanna.
+- CompositionRoot/konfigurację kontenera należy testować (żeby nie wyszło iż np. strzela do bazy).
+- Kod F# jest dużo bardziej skondensowany/naładowany treścią - dlatego powinien być krótki - 100 LoC F# = 1000+ C#
+
 ---
 
 <!-- .slide: data-background="#0077bd" -->
@@ -366,6 +426,19 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Często struktury wychodzą proste: listy, krotki
 - ...lub kod jest generyczny
 - W razie Niemca: prywatne unie i sygnatury
+
+Note:
+
+- Ukrywanie informacji to podstawa w OOP/C#. Tu też, ale inaczej.
+- Ukrywanie objawia się natomiast w tym, że przekazujemy minimum informacji do funkcji (co jest łatwiej robić, tworzyć DTO per funkcja).
+
+```fsharp
+module EmailAddress
+	// string representation is hidden
+	type EmailAddress = private EmailAddress of string
+	let create s = EmailAddress s
+	let toString (EmailAddress s) = s
+```
 
 ---
 
@@ -380,6 +453,15 @@ Do czego użyliśmy: kompilacja, unit testy, pokrycie i analiza kodu, paczki, po
 - Żeby zrozumieć rekurencję trzeba najpierw zrozumieć rekurencję
 - Programowanie obiektowe w F# to ZŁO
 
+Note:
+
+Życie programisty nie jest usłane różami. Pewne rzeczy sprawiały nam sporo trudności.
+
+- Oczywista, oczywistość albo rozczarowanie. F# to nie panaceum. Oprócz składni, trzeba znać SOLID/CleanCode/wzorce/architektury.
+- Najpierw kod z adnotacjami, które usuwamy. W miarę zdobywania doświadczenia odwrotnie: brak typów, a na koniec dodajemy tu i ówdzie dla czytelności (szczególnie w publicznym API)
+- krotki są dobre na krótkim zasięgu, w publicznym API nie
+- rekurencja w końcu "klinie", ale często nie jest potrzebna: przetwarzanie strumieniowe, fold
+
 ---
 
 <!-- .slide: data-background="#0077bd" -->
@@ -391,6 +473,16 @@ Nie wszystko musi/może być innowacyjne:
 - HTTP/REST vs. WCF
 - EventStore vs. pliki vs. SQL Server
 - ...
+
+Ale była zabawa! I się działo!
+
+Note:
+
+Ograniczenia czasowe, pojemność mózgu i cache. Nie uczymy się na raz kilku technologi (nie w pracy).
+
+W banku standardem jest WCF+certyfikaty+monitoring.
+
+Ale użyliśmy dużo agentów i Rx-a, type-providerów. I tak był fun!
 
 ---
 
@@ -404,6 +496,14 @@ Nie wszystko musi/może być innowacyjne:
 - Zasady SOLID/CleanCode nadal obowiązują tylko łatwiej ich przestrzegać
 - Architektura Port & Adapters "sama" wychodzi
 
+Note:
+
+- Brak null, immutable
+- Czyli jak zjeść ciastko (lekkość języków dynamicznych) i mieć ciastko (bezpieczeństwo języków statycznie typowanych) + automatyczna generalizacja
+- żadnych wątków i locków
+- "Wzorce projektowe kompensują za braki w języku". Koszt _dobrego_ kodu jest duużo mniejszy
+- Odsyłam do Ian Coopera i Marka Seemanna. To logika biznesowa dyktuje warunki, a nie wykorzystane technologie.
+
 ---
 
 <!-- .slide: data-background="#0077bd" -->
@@ -413,6 +513,14 @@ Nie wszystko musi/może być innowacyjne:
 - Trudno się oderwać od kodowania
 - Objawy funkcyjnego przegięcia
 - Nieustające dyskusje o kodzie
+
+Note:
+
+Roześmiane japy i błyszczące oczy. Stoisz w drzwiach w kurtce, gadasz o kodzie przez pół godziny, po czym rozbierasz się i wracasz do kodowanie. Nie jest to częsty widok w korpo.
+
+Przy obiedzie, przy kawie. Nie pamiętam takiej ekscytacji.
+
+To na doprowadziło do końca.
 
 ***
 
@@ -428,3 +536,15 @@ I żyli długo i szczęśliwie...
 &nbsp;
 
 > „Of all the words of mice and men, the saddest are 'It might have been.'” -- Kurt Vonnegut
+
+Note:
+
+Słodko-gorzki finał. Sukces, wejście na produkcję ku zadowoleniu wszystkich: programistów, Product Ownera i użytkowników.
+
+Tylko nie nastąpił dalszy ciąg, bo... w nowym roku biznes przegrał bitwę o manday-e. Priorytety banku się zmieniły, obcięto budżet na dalszy ciąg, zabrano człowieka.. Który odchodził ze łzami w oczach do Angulara (złoooo). Kto by chciał w Angularze jak może w F#.
+
+Ja zrealizowałem swoje marzenie, a teraz pora na następne!
+
+***
+
+# Pytania
