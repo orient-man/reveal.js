@@ -50,7 +50,7 @@ https://blog.toggl.com/2017/02/seven-circles-of-developer-hell/
 
 Note:
 
-Wszystko zaczęło się od sytuacji, która spotyka wielu w naszej branży. Po pierwszych miodowych miesiącach w nowej pracy nadszedł _kryzys_. 
+Wszystko zaczęło się od sytuacji, która spotyka wielu w naszej branży. Po pierwszych miodowych miesiącach w nowej pracy nadszedł _kryzys_.
 
 ---
 
@@ -184,7 +184,7 @@ Note:
 
 Nudzić: "success stories" (jet.com, inne banki), prezentacje, kawałki kodu.
 
-Obawy przed zmianą nie brać osobiście. 
+Obawy przed zmianą nie brać osobiście.
 
 Typy sceptyków: niedoinformowani, idący za stadem, cynicy, wypaleni, przygnieceni czasem, szef, irracjonalni.
 
@@ -206,7 +206,7 @@ Entuzjazm nie wystarczy! Pokazujemy, że da się lepiej - a jak? Szkolenie!
 - szybka pętla zwrotna (REPL)
 - system typów, który prowadzi za rękę
 - DEMO: Type Driven Development
-  - TDD = pętla zwrotna + eksploracja -> dobra architektura 
+  - TDD = pętla zwrotna + eksploracja -> dobra architektura
 
 Note:
 
@@ -384,9 +384,11 @@ Kończąc wątek okiełznania maszyny/języka, aby robił to co my chcemy. I aby
 
 Kod, który już znamy na wylot, przepiszmu 1-1 na F#.
 
+Więcej: https://sergeytihon.com/2014/04/26/where-to-practice-your-f-with-fun/
+
 ***
 
-<!-- .slide: data-background="./img/he-man.jpg" data-background-size="contain" -->
+<!-- .slide: data-background="./img/he-man.jpg" -->
 ## Mocy przybywaj!
 
 Note:
@@ -547,4 +549,5 @@ Ja zrealizowałem swoje marzenie, a teraz pora na następne!
 
 ***
 
+<!-- .slide: data-background="./img/MostHashTagged.jpg" -->
 # Pytania
