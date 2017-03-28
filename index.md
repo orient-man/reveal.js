@@ -68,16 +68,17 @@ Nie tak miało być!
 Note:
 1. Usprawnianiu i łataniu dziur w wielkich gmachach aplikacji postawionych przez rzesze bezimiennych autorów (migracja svn -> git)
 1. Jako "Pan Ekspert" miałem _ex catedra_ planować świetlaną przyszłość:
-  -  "Czy zatrudniać programistów tylko do pisania testów automatycznych?"
-  - "Jedno repozytorium czy wiele?"
-  - "Jaki procent pokrycia?"
-  - "Kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?"
+   -  "Czy zatrudniać programistów tylko do pisania testów automatycznych?"
+   - "Jedno repozytorium czy wiele?"
+   - "Jaki procent pokrycia?"
+   - "Kupować drogie narzędzie od IBM (Rational Test Virtalization Server) do testów end-to-end czy nie?"
 1. Bardzo ciekawe, ale po pewnym czasie zaczyna się dostrzegać pewien wzorzec...
 
 Słowem: sytuacja nie była różowa. A przecież mogło być tak fajnie:
 
 * ciekawa domena (rynek walutowy, Hedge Accounting czyli rachunkowość zabezpieczeń)
-* i naprawdę niegłupi ludzie zarówno w IT, jaki i w biznesie
+  - ...i to własne systemy a nie kupione
+* naprawdę niegłupi ludzie zarówno w IT, jaki i w biznesie
 
 Chciałem _zrobić różnicę_ - tylko jak?
 
@@ -482,7 +483,7 @@ Note:
 
 Ograniczenia czasowe, pojemność mózgu i cache. Nie uczymy się na raz kilku technologi (nie w pracy).
 
-W banku standardem jest WCF+certyfikaty+monitoring.
+W banku standardem jest WCF+certyfikaty+monitoring+service discovery.
 
 Ale użyliśmy dużo agentów i Rx-a, type-providerów. I tak był fun!
 
