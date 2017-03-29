@@ -25,9 +25,8 @@ Jak wejść z F# na produkcję i pozostać przy życiu. Moje doświadczenia z wp
         "Wierzy w przypadek"
         "Piwny filozof"
         "W nielicznych wolnych​ ​chwilach harata w gałę (na bramce)" ]
-    |> List.map ((+) "* ") |> List.iter (printfn "%s")
-
-    ``Ekspert IT w mBanku`` >> (``Startup in Stealth Mode`` <| FinAI)
+    |> List.reduce ``Ekspert IT``
+    |> (mBank >> (``Startup in Stealth Mode`` <| FinAI))
 
 ***
 
@@ -154,12 +153,15 @@ Nadszedł czas, aby przekonać innych do F#-a, oraz aby się go nauczyć na żyw
 <!-- .slide: data-background="#2E7D32" -->
 ### Kim są Oni?
 
-> „Optimize for readability first”
-
 - Czytelnik, głupcze!
 - Programista, tester, analityk, menedżer, "biznes"...
+- Typy sceptyków [*]: niedoinformowany, idący za stadem, cynik, wypalony, przygniecony czasem, szef, irracjonalny
+
+[*] Książka: [Driving Technical Change](https://pragprog.com/book/trevan/driving-technical-change)
 
 Note:
+
+> „Optimize for readability first”
 
 Należy pamiętać, że _styczność z kodem mają nie tylko programiści_. Kod jest przede wszystkim czytany (i pod tym kątem należy go optymalizować). A często czytają go również analitycy i testerzy, a czasem również menedżerzy (ex programiści) lub nawet biznes!
 
@@ -179,19 +181,13 @@ Z programistami jest najłatwiej (choć bywają ciężko doświadczeni przez los
 - Entuzjazm jest zaraźliwy
     > Poza tym uważam, że ~~Kartaginę należy zniszczyć~~ w F# da się to zrobić o wiele lepiej
 
-Książka: [Driving Technical Change](https://pragprog.com/book/trevan/driving-technical-change)
-
 Note:
 
 Nudzić: "success stories" (jet.com, inne banki), prezentacje, kawałki kodu.
 
 Obawy przed zmianą nie brać osobiście.
 
-Typy sceptyków: niedoinformowani, idący za stadem, cynicy, wypaleni, przygnieceni czasem, szef, irracjonalni.
-
 > Nie ma czasu, aby zrobić dobrze, ale jest czas aby zrobić 2x
-
-TODO: może slajd z tego?
 
 Entuzjazm nie wystarczy! Pokazujemy, że da się lepiej - a jak? Szkolenie!
 
@@ -404,13 +400,13 @@ W tej części opowiem nie o małym 2-tygodniowym projekcie, tylko o czymś co p
 ### Zmiana przyzwyczajeń
 #### Kompozycja
 
-> „Algorytmy + struktury danych = programy” -- Niklaus Wirth
-
 - Życie bez kontenera DI jest możliwe!
 - Czyste funkcje vs. funkcje wyższego rzędu
 - Pisz deklaratywnie
 - Testuj i trzymaj na diecie swój CompositionRoot
-- Keep It Simple Short: 10-15 plików, < 100 LoC
+- KISS: 10-15 plików, < 100 LoC (F# ma SNR > 40dB :)
+
+![F# ma SNR > 40dB :)](./img/signal-weak.jpg)
 
 Note:
 
@@ -424,6 +420,8 @@ Note:
 <!-- .slide: data-background="#0077bd" -->
 ### Zmiana przyzwyczajeń
 #### Ukrywanie informacji
+
+> „Algorytmy + struktury danych = programy” -- Niklaus Wirth
 
 - Dlaczego ukrywamy? Bo chronimy stan. Wróć!
 - Często struktury wychodzą proste: listy, krotki
